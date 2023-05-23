@@ -1,0 +1,507 @@
+{% extends 'common.html' %} {% block title %} Lawcater {% endblock %}
+{% block body %}
+ {% load static %}
+
+<!-- carosoul -->
+<section>
+    <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+        <ol class="carousel-indicators">
+          <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+          <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+          <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+        </ol>
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img class="d-block w-100" src=" {% static 'image/home-1.jpg' %}"  alt="First slide">
+          </div>
+          <div class="carousel-item">
+            <img class="d-block w-100" src=" {% static 'image/home-2.jpg' %}" alt="Second slide">
+          </div>
+          <div class="carousel-item">
+            <img class="d-block w-100" src=" {% static 'image/home-3.jpg' %} " alt="Third slide">
+          </div>
+        </div>
+        <div class="carousel-caption d-none d-md-block">
+
+          </div>
+        <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="sr-only">Previous</span>
+        </a>
+        <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="sr-only">Next</span>
+        </a>
+      </div>
+</section>
+
+	<!-- about -->
+	<section class="about-section">
+		<p class="text-center branch-title">About Us</p>
+	 <div class="container-xxl " id="about">
+            <div class="container py-5 ">
+                <div class="row g-5 align-items-center about">
+                    <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s">
+                        <h5 class="text-primary-gradient fw-medium">Welcome to Tendel Hardware! </h5>
+						<p class="mb-4"> We are a leading supplier of building construction materials, tools, and equipment with multiple branches located in different areas. At Tendel Hardware, we are committed to providing our customers with high-quality products, exceptional customer service, and competitive prices.</p>
+
+                        <p class="mb-4">At Tendel Hardware, we believe that exceptional customer service is the key to building long-lasting relationships with our customers. Our knowledgeable staff is always available to answer any questions you may have about our products or services. We can also provide expert advice on which products are best suited for your specific project, ensuring that you have the right tools and materials to get the job done. </p>
+
+                    </div>
+                    <div class="col-lg-6">
+                        <img class="img-about wow fadeInUp" data-wow-delay="0.5s" src="{% static 'image/tendel-about.jpg' %}">
+                    </div>
+                </div>
+            </div>
+        </div>
+	</section>
+
+	<!-- our branch -->
+	<section class="branch">
+		<p class="text-center branch-title">Our Branches</p>
+
+		  <div class="container">
+			<div class="row content">
+
+				{% for branch in allbranch %}
+				<div class="col-lg-4 col-md-3 col-sm-6 my-2 mb-4 col">
+					<div class="collapseable-card border p-0 ">
+						<div class="collapseable-card--top p-2 mb-0">
+							<div class="d-flex justify-content-between align-items-center w-100">
+								<div class="w-100">
+									<div class="d-flex justify-content-between align-items-center w-100 mb-1 border-bottom pb-2 mb-2" >
+										<h5 class="font-weight-bold mb-0  text-danger">{{ branch.main_address }}</h5>
+										<div role="button" class="text-danger" data-toggle="tooltip" data-placement="center" title="Locate on map" onclick="showMapView()" id="mapViewLink">
+											<h4 class="mb-0">
+											<svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 512 512" height="1em" width="1em"
+											xmlns="http://www.w3.org/2000/svg">
+											<path d="M256 176c-44.004 0-80.001 36-80.001 80 0 44.004 35.997 80 80.001 80 44.005 0 79.999-35.996 79.999-80 0-44-35.994-80-79.999-80zm190.938 58.667c-9.605-88.531-81.074-160-169.605-169.599V32h-42.666v33.067c-88.531 9.599-160 81.068-169.604 169.599H32v42.667h33.062c9.604 88.531 81.072 160 169.604 169.604V480h42.666v-33.062c88.531-9.604 160-81.073 169.605-169.604H480v-42.667h-33.062zM256 405.333c-82.137 0-149.334-67.198-149.334-149.333 0-82.136 67.197-149.333 149.334-149.333 82.135 0 149.332 67.198 149.332 149.333S338.135 405.333 256 405.333z">
+
+											</path>
+											</svg>
+											</h4>
+										</div>
+
+									</div>
+									<span class="text-title d-flex align-items-baseline branch-item ">
+										<span class="inline-block">
+											<div class="d-flex flex-column ">
+												<span class="branch-info">
+													<svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 384 512" class="mr-1" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
+														<path d="M172.268 501.67C26.97 291.031 0 269.413 0 192 0 85.961 85.961 0 192 0s192 85.961 192 192c0 77.413-26.97 99.031-172.268 309.67-9.535 13.774-29.93 13.773-39.464 0zM192 272c44.183 0 80-35.817 80-80s-35.817-80-80-80-80 35.817-80 80 35.817 80 80 80z">
+
+														</path>
+													</svg>
+													{{ branch.location }}
+
+													<!-- <p class="city-name">Banepa Rural Municipality-03</p> -->
+												</span>
+													<span class="branch-info">
+														<svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 1024 1024" class="mr-1 " height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
+															<path d="M877.1 238.7L770.6 132.3c-13-13-30.4-20.3-48.8-20.3s-35.8 7.2-48.8 20.3L558.3 246.8c-13 13-20.3 30.5-20.3 48.9 0 18.5 7.2 35.8 20.3 48.9l89.6 89.7a405.46 405.46 0 0 1-86.4 127.3c-36.7 36.9-79.6 66-127.2 86.6l-89.6-89.7c-13-13-30.4-20.3-48.8-20.3a68.2 68.2 0 0 0-48.8 20.3L132.3 673c-13 13-20.3 30.5-20.3 48.9 0 18.5 7.2 35.8 20.3 48.9l106.4 106.4c22.2 22.2 52.8 34.9 84.2 34.9 6.5 0 12.8-.5 19.2-1.6 132.4-21.8 263.8-92.3 369.9-198.3C818 606 888.4 474.6 910.4 342.1c6.3-37.6-6.3-76.3-33.3-103.4zm-37.6 91.5c-19.5 117.9-82.9 235.5-178.4 331s-213 158.9-330.9 178.4c-14.8 2.5-30-2.5-40.8-13.2L184.9 721.9 295.7 611l119.8 120 .9.9 21.6-8a481.29 481.29 0 0 0 285.7-285.8l8-21.6-120.8-120.7 110.8-110.9 104.5 104.5c10.8 10.8 15.8 26 13.3 40.8z">
+
+															</path>
+														</svg>
+														<a class="text-title d-inline-block" href="">{{branch.phone.national_number }} &nbsp;</a>
+													</span>
+												</div>
+											</span>
+										</span>
+									</div>
+								</div>
+							</div>
+
+
+											<div class="text-center collapse-btn  null accordion-header" onclick="toggleAccordion(this)">
+
+																<div class="accordion-icon-container">
+																	<span class="accordion-icon fa">&#xf107;</span>
+																	<!-- <i class="fa fa-angle-down accordion-icon" ></i> -->
+																 </div>
+															</div>
+
+															<div class="collapseable-card--bottom justify-content-end border null accordion-body" style="max-height: 0; overflow: hidden;">
+																<div class=""></div>
+																<div class="border-top border-line-top">
+																	<div class="d-flex flex-column pt-3 px-2 py-2">
+																		<h6 class="text-black">Branch Manager Details</h6>
+																		<span class="text-title">
+																			<svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 1024 1024" class="mr-1 " height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
+																				<path d="M858.5 763.6a374 374 0 0 0-80.6-119.5 375.63 375.63 0 0 0-119.5-80.6c-.4-.2-.8-.3-1.2-.5C719.5 518 760 444.7 760 362c0-137-111-248-248-248S264 225 264 362c0 82.7 40.5 156 102.8 201.1-.4.2-.8.3-1.2.5-44.8 18.9-85 46-119.5 80.6a375.63 375.63 0 0 0-80.6 119.5A371.7 371.7 0 0 0 136 901.8a8 8 0 0 0 8 8.2h60c4.4 0 7.9-3.5 8-7.8 2-77.2 33-149.5 87.8-204.3 56.7-56.7 132-87.9 212.2-87.9s155.5 31.2 212.2 87.9C779 752.7 810 825 812 902.2c.1 4.4 3.6 7.8 8 7.8h60a8 8 0 0 0 8-8.2c-1-47.8-10.9-94.3-29.5-138.2zM512 534c-45.9 0-89.1-17.9-121.6-50.4S340 407.9 340 362c0-45.9 17.9-89.1 50.4-121.6S466.1 190 512 190s89.1 17.9 121.6 50.4S684 316.1 684 362c0 45.9-17.9 89.1-50.4 121.6S557.9 534 512 534z">
+
+																				</path>
+																			</svg> {{ branch.manager_name }}
+																		</span>
+																		<span><a class=" text-title" href="tel:9860852000">
+																			<svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 1024 1024" class="mr-1 " height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
+																				<path d="M877.1 238.7L770.6 132.3c-13-13-30.4-20.3-48.8-20.3s-35.8 7.2-48.8 20.3L558.3 246.8c-13 13-20.3 30.5-20.3 48.9 0 18.5 7.2 35.8 20.3 48.9l89.6 89.7a405.46 405.46 0 0 1-86.4 127.3c-36.7 36.9-79.6 66-127.2 86.6l-89.6-89.7c-13-13-30.4-20.3-48.8-20.3a68.2 68.2 0 0 0-48.8 20.3L132.3 673c-13 13-20.3 30.5-20.3 48.9 0 18.5 7.2 35.8 20.3 48.9l106.4 106.4c22.2 22.2 52.8 34.9 84.2 34.9 6.5 0 12.8-.5 19.2-1.6 132.4-21.8 263.8-92.3 369.9-198.3C818 606 888.4 474.6 910.4 342.1c6.3-37.6-6.3-76.3-33.3-103.4zm-37.6 91.5c-19.5 117.9-82.9 235.5-178.4 331s-213 158.9-330.9 178.4c-14.8 2.5-30-2.5-40.8-13.2L184.9 721.9 295.7 611l119.8 120 .9.9 21.6-8a481.29 481.29 0 0 0 285.7-285.8l8-21.6-120.8-120.7 110.8-110.9 104.5 104.5c10.8 10.8 15.8 26 13.3 40.8z">
+
+                                                                                </path></svg> {{ branch.manager_contact }}</a></span>
+																				<span><a class=" text-title" href="mailto:urgenlama33@gmail.com">
+																					<svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 1024 1024" class="mr-1 " height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
+																						<path d="M928 160H96c-17.7 0-32 14.3-32 32v640c0 17.7 14.3 32 32 32h832c17.7 0 32-14.3 32-32V192c0-17.7-14.3-32-32-32zm-40 110.8V792H136V270.8l-27.6-21.5 39.3-50.5 42.8 33.3h643.1l42.8-33.3 39.3 50.5-27.7 21.5zM833.6 232L512 482 190.4 232l-42.8-33.3-39.3 50.5 27.6 21.5 341.6 265.6a55.99 55.99 0 0 0 68.7 0L888 270.8l27.6-21.5-39.3-50.5-42.7 33.2z">
+
+																						</path>
+																					</svg> {{ branch.manager_email }}</a>
+																				</span>
+																			</div>
+																		</div>
+
+																				<div class="border-top border-line-top">
+
+																				</div>
+																			</div>
+														</div>
+				</div>
+                {% endfor %}
+				<!-- <div class="col-lg-4 col-md-3 col-sm-6 my-2 mb-4 col">
+					<div class="collapseable-card border p-0 ">
+						<div class="collapseable-card--top p-2 mb-0">
+							<div class="d-flex justify-content-between align-items-center w-100">
+								<div class="w-100">
+									<div class="d-flex justify-content-between align-items-center w-100 mb-1 border-bottom pb-2 mb-2">
+										<h5 class="font-weight-bold mb-0  text-danger">Banepa</h5>
+
+									</div>
+									<span class="text-title d-flex align-items-baseline branch-item ">
+										<span class="inline-block">
+											<div class="d-flex flex-column ">
+												<span class="branch-info">
+													<svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 384 512" class="mr-1" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
+														<path d="M172.268 501.67C26.97 291.031 0 269.413 0 192 0 85.961 85.961 0 192 0s192 85.961 192 192c0 77.413-26.97 99.031-172.268 309.67-9.535 13.774-29.93 13.773-39.464 0zM192 272c44.183 0 80-35.817 80-80s-35.817-80-80-80-80 35.817-80 80 35.817 80 80 80z">
+
+														</path>
+													</svg>
+													Banepa Rural Municipality-03
+
+												</span>
+													<span class="branch-info">
+														<svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 1024 1024" class="mr-1 " height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
+															<path d="M877.1 238.7L770.6 132.3c-13-13-30.4-20.3-48.8-20.3s-35.8 7.2-48.8 20.3L558.3 246.8c-13 13-20.3 30.5-20.3 48.9 0 18.5 7.2 35.8 20.3 48.9l89.6 89.7a405.46 405.46 0 0 1-86.4 127.3c-36.7 36.9-79.6 66-127.2 86.6l-89.6-89.7c-13-13-30.4-20.3-48.8-20.3a68.2 68.2 0 0 0-48.8 20.3L132.3 673c-13 13-20.3 30.5-20.3 48.9 0 18.5 7.2 35.8 20.3 48.9l106.4 106.4c22.2 22.2 52.8 34.9 84.2 34.9 6.5 0 12.8-.5 19.2-1.6 132.4-21.8 263.8-92.3 369.9-198.3C818 606 888.4 474.6 910.4 342.1c6.3-37.6-6.3-76.3-33.3-103.4zm-37.6 91.5c-19.5 117.9-82.9 235.5-178.4 331s-213 158.9-330.9 178.4c-14.8 2.5-30-2.5-40.8-13.2L184.9 721.9 295.7 611l119.8 120 .9.9 21.6-8a481.29 481.29 0 0 0 285.7-285.8l8-21.6-120.8-120.7 110.8-110.9 104.5 104.5c10.8 10.8 15.8 26 13.3 40.8z">
+
+															</path>
+														</svg>
+														<a class="text-title d-inline-block" href="tel:9856017094">9856017094 &nbsp;</a>
+													</span>
+												</div>
+											</span>
+										</span>
+									</div>
+								</div>
+							</div>
+
+
+											<div class="text-center collapse-btn  null accordion-header" onclick="toggleAccordion(this)">
+
+																<div class="accordion-icon-container">
+																	<span class="accordion-icon fa">&#xf107;</span>
+
+																 </div>
+															</div>
+
+															<div class="collapseable-card--bottom justify-content-end border null accordion-body" style="max-height: 0; overflow: hidden;">
+																<div class=""></div>
+																<div class="border-top border-line-top">
+																	<div class="d-flex flex-column pt-3 px-2 py-2">
+																		<h6 class="text-black">Branch Manager Details</h6>
+																		<span class="text-title">
+																			<svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 1024 1024" class="mr-1 " height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
+																				<path d="M858.5 763.6a374 374 0 0 0-80.6-119.5 375.63 375.63 0 0 0-119.5-80.6c-.4-.2-.8-.3-1.2-.5C719.5 518 760 444.7 760 362c0-137-111-248-248-248S264 225 264 362c0 82.7 40.5 156 102.8 201.1-.4.2-.8.3-1.2.5-44.8 18.9-85 46-119.5 80.6a375.63 375.63 0 0 0-80.6 119.5A371.7 371.7 0 0 0 136 901.8a8 8 0 0 0 8 8.2h60c4.4 0 7.9-3.5 8-7.8 2-77.2 33-149.5 87.8-204.3 56.7-56.7 132-87.9 212.2-87.9s155.5 31.2 212.2 87.9C779 752.7 810 825 812 902.2c.1 4.4 3.6 7.8 8 7.8h60a8 8 0 0 0 8-8.2c-1-47.8-10.9-94.3-29.5-138.2zM512 534c-45.9 0-89.1-17.9-121.6-50.4S340 407.9 340 362c0-45.9 17.9-89.1 50.4-121.6S466.1 190 512 190s89.1 17.9 121.6 50.4S684 316.1 684 362c0 45.9-17.9 89.1-50.4 121.6S557.9 534 512 534z">
+
+																				</path>
+																			</svg> Urgen Lama
+																		</span>
+																		<span><a class=" text-title" href="tel:9860852000">
+																			<svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 1024 1024" class="mr-1 " height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
+																				<path d="M877.1 238.7L770.6 132.3c-13-13-30.4-20.3-48.8-20.3s-35.8 7.2-48.8 20.3L558.3 246.8c-13 13-20.3 30.5-20.3 48.9 0 18.5 7.2 35.8 20.3 48.9l89.6 89.7a405.46 405.46 0 0 1-86.4 127.3c-36.7 36.9-79.6 66-127.2 86.6l-89.6-89.7c-13-13-30.4-20.3-48.8-20.3a68.2 68.2 0 0 0-48.8 20.3L132.3 673c-13 13-20.3 30.5-20.3 48.9 0 18.5 7.2 35.8 20.3 48.9l106.4 106.4c22.2 22.2 52.8 34.9 84.2 34.9 6.5 0 12.8-.5 19.2-1.6 132.4-21.8 263.8-92.3 369.9-198.3C818 606 888.4 474.6 910.4 342.1c6.3-37.6-6.3-76.3-33.3-103.4zm-37.6 91.5c-19.5 117.9-82.9 235.5-178.4 331s-213 158.9-330.9 178.4c-14.8 2.5-30-2.5-40.8-13.2L184.9 721.9 295.7 611l119.8 120 .9.9 21.6-8a481.29 481.29 0 0 0 285.7-285.8l8-21.6-120.8-120.7 110.8-110.9 104.5 104.5c10.8 10.8 15.8 26 13.3 40.8z"></path></svg> 9856017094</a></span>
+																				<span><a class=" text-title" href="mailto:urgenlama33@gmail.com">
+																					<svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 1024 1024" class="mr-1 " height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
+																						<path d="M928 160H96c-17.7 0-32 14.3-32 32v640c0 17.7 14.3 32 32 32h832c17.7 0 32-14.3 32-32V192c0-17.7-14.3-32-32-32zm-40 110.8V792H136V270.8l-27.6-21.5 39.3-50.5 42.8 33.3h643.1l42.8-33.3 39.3 50.5-27.7 21.5zM833.6 232L512 482 190.4 232l-42.8-33.3-39.3 50.5 27.6 21.5 341.6 265.6a55.99 55.99 0 0 0 68.7 0L888 270.8l27.6-21.5-39.3-50.5-42.7 33.2z">
+
+																						</path>
+																					</svg> urgenlama@gmail.com</a>
+																				</span>
+																			</div>
+																		</div>
+
+																				<div class="border-top border-line-top">
+
+																				</div>
+																			</div>
+														</div>
+				</div> -->
+
+
+
+		  </div>
+		  </div>
+
+
+	</section>
+
+	<!-- news and notice -->
+	<section class="news" >
+		<div class="news-top">
+			<div class="center"><p class="title-news branch-title ">News and Notice</p></div>
+
+		<div class="right">
+			<a href ="/news">See All ></a>
+		  </div>
+
+		</div>
+		<div class="news-rows">
+			<div class="news-slider">
+				{% for news in allnews|slice:":3" %}
+
+				<div class="col-lg-4 col-md-4 col-news " data-toggle="modal" data-target="#news-modal-{{ news.news_id }}">
+					 <div class="news-box wow fadeInUp  " data-wow-delay="0.5s" >
+						 <div class="news-text">
+
+
+									<p class="address">{{ news.title }}</class=></p>
+
+
+							 <div class="news-detail">
+							 <p class="news-content">
+								{{ news.body }}
+							 </p>
+							 </div>
+
+							 <p class="text-right">{{ news.name }}</p>
+
+
+
+						 </div>
+
+					 </div>
+					</div>
+					{% endfor %}
+
+					<!-- <div class="col-lg-4 col-md-4 col-news">
+						<div class="news-box  wow fadeInUp  " data-wow-delay="0.5s" >
+							<div class="news-text">
+
+
+									   <p class="address">सूचना!! सूचना!! सूचना!!</class=></p>
+
+
+								<div class="news-detail">
+								<p>
+								   बैंकहरुको ब्याजदर घट्दो क्रममा देखिए पनि एकल अंकमा आउन भने समय लाग्ने देखिएको छ । चालु आर्थिक वर्षको तेस्रो त्रैमासमा बैंकहरुको आधार दर (बेस रेट) घट्दो क्रममा देखिए पनि दोहोरो अंकमा नै देखिएको छ ।
+								   नेपाल राष्ट्र बैंकले कर्जाको ब्याजदरलाई आधार दरसँग आवद्ध गराएको छ.
+								</p>
+								</div>
+								<p class="text-right">ब्याजदर</p>
+
+
+							</div>
+
+						</div>
+						</div> -->
+
+
+
+					</div>
+
+
+
+
+
+
+
+
+
+			</div>
+
+
+
+
+
+
+			</div>
+	</section>
+
+
+	<div class="container-xxl py-2" id="feature">
+		<div class="container py-2 px-lg-5">
+			<div class="text-center wow fadeInUp" data-wow-delay="0.1s">
+
+				<h5 class="mb-5  fw-medium branch-title">Our Items</h1>
+					<a class="see" href ="/item">See All > </a>
+
+
+			</div>
+			<div class="row g-4">
+				{% for i in allitem %}
+				<div class="col-lg-4 col-md-6 wow fadeInUp col-prod" data-wow-delay="0.1s">
+					<div class="feature-item bg-light rounded p-4">
+						<div class="image-container">
+							<img src=" {% static 'image/tendel-1.jpg' %}" alt="Image 1">
+
+						  </div>
+                          <p>{{ i.title }}</p>
+
+
+
+					</div>
+				</div>
+                {% endfor %}
+
+
+			</div>
+		</div>
+	</div>
+	<!-- Features End -->
+
+	<!-- Out team -->
+	<div class="container-xxl py-2" id="pricing">
+		<div class="container py-2 px-lg-5">
+			<div class="text-center wow fadeInUp" data-wow-delay="0.1s">
+				<h5 class=" fw-medium branch-title">Our Teams</h5>
+
+			</div>
+			<div class="tab-class text-center teams wow fadeInUp" data-wow-delay="0.1s">
+
+				<div class="tab-content text-start">
+					<div id="tab-1" class="tab-pane fade show p-0 active">
+						<div class="row g-4">
+							<div class="col-lg-4  ">
+								<div class="bg-light rounded prod-item ">
+
+
+										<div class=" bg-light rounded p-4 ">
+											<div class="team-container  ">
+												<img src="{% static 'image/team-1.jpg' %}" class="feature-item" alt="Image 1">
+
+											  </div>
+
+										</div>
+										<p class="text-center team-name">Pasang Lama</p>
+										<p class="text-center team-pos">Managing Director</p>
+
+
+
+
+								</div>
+							</div>
+							<div class="col-lg-4">
+								<div class="bg-light rounded prod-item">
+
+
+									<div class=" bg-light rounded p-4">
+										<div class="team-container">
+											<img src="{% static 'image/team-1.jpg' %}"class="feature-item"  alt="Image 1">
+
+										  </div>
+
+									</div>
+									<p class="text-center team-name">Pasang Lama</p>
+									<p class="text-center team-pos">Managing Director</p>
+
+
+
+
+
+							</div>
+							</div>
+							<div class="col-lg-4">
+								<div class="bg-light rounded prod-item">
+
+
+									<div class=" bg-light rounded p-4">
+										<div class="team-container">
+											<img src="{% static 'image/team-1.jpg' %}" class="feature-item"  alt="Image 1">
+
+										  </div>
+
+									</div>
+									<p class="text-center team-name">Pasang Lama</p>
+									<p class="text-center team-pos">Managing Director</p>
+
+
+							</div>
+							</div>
+						</div>
+					</div>
+
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!--contact div started-->
+
+
+<div class="contact-container">
+	<h5 class="titles wow fadeInUp" data-wow-delay="0.1s">Get in Touch</h2>
+	<div class="contact-info wow fadeInUp" data-wow-delay="0.1s">
+		<form class="forms" >
+			<h6>Write Us</h6>
+			<input type="text" name="fullname" id="fullname" placeholder="Full Name" required>
+			<input type="email" name="email" id="email" placeholder="Email" required>
+			<input type="tel" name="tel" id="tel" placeholder="tel: XXX XXX XXXX" required>
+			<textarea name="msg" id="msg" cols="30" rows="10" placeholder="Your Message Here..."></textarea>
+			<button type="submit">Send</button>
+		</form>
+		<div class="details">
+			<h5>Contact Us</h5>
+			<div class="contact-items-wrapper">
+				<div class="contact-items">
+					<i class="fa fa-map-marker"></i>
+					<p class="details-title"><strong>Address:</strong></p>
+					<p class="sub-title">Banepa</p>
+				  </div>
+
+				<div class="contact-items">
+                    <i class="fa  fa-phone"></i>
+
+					<p class="details-title"><strong>Phone:</strong> </p><p class="sub-title"> 01234643</p>
+
+				</div>
+				<div class="contact-items">
+					<i class="fa fa-envelope"></i>
+					<p class="details-title"><strong>Email:</strong></p><p class="sub-title"><a href="#"> tendel42@gmail.com</a> </p>
+				</div>
+
+			</div>
+
+		</div>
+
+	</div>
+
+  </div>
+  <!--contact ended-->
+
+
+	<!-- Features End -->
+    <section class="offer">
+		<div class="row offer-row wow fadeInUp"  data-wow-delay="0.1s" >
+			<div class="col-12 col-offer">
+
+
+						<img src="{% static 'image/offer.jpg' %}" alt="Nature" style="width:100%;">
+						<div class="text-block ">
+							{% for offer in offer %}
+						<h4 class="wow fadeInUp" data-wow-delay="0.1s">GET UP TO </h4>
+						<h2 class="wow fadeInUp"data-wow-delay="0.1s">{{ offer.discount }} Off</h2>
+						<p class="wow fadeInUp" data-wow-delay="0.1s">All construction Items, Offer Ends {{ offer.validtime }}</p>
+						{% endfor %}
+						</div>
+			</div>
+			<!-- <div class="col-4 col-offer">
+
+					<img src="{% static 'image/offfer.jpg' %}" alt="Snow" class="offer-sec-img" style="width:100%;">
+
+					<div class="centered">
+
+						</div>
+
+			</div> -->
+
+		  </div>
+
+		</section>
+
+
+
+ {% endblock %}

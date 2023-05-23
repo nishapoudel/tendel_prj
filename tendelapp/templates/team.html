@@ -1,0 +1,136 @@
+{% extends 'common.html' %} {% block title %} Lawcater {% endblock %}
+{% block body %}
+ {% load static %}
+
+<!-- carosoul -->
+<section  class="item">
+    <div id="carouselExampleIndicators" class="carousel slide item-bg" data-ride="carousel">
+
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img class="d-block w-100" src=" {% static 'image/shop-2.jpg' %}"  alt="First slide">
+          </div>
+
+        </div>
+        <div class="carousel-caption d-none d-md-block">
+
+          </div>
+
+      </div>
+</section>
+
+	<!-- Out team -->
+	<div class="container-xxl py-2" id="pricing">
+		<div class="container py-2 px-lg-5">
+			<div class="text-center wow fadeInUp" data-wow-delay="0.1s">
+				<h5 class=" fw-medium branch-title">Our Teams</h5>
+
+			</div>
+			<div class="tab-class text-center teams wow fadeInUp" data-wow-delay="0.1s">
+
+				<div class="tab-content text-start">
+					<div id="tab-1" class="tab-pane fade show p-0 active">
+						<div class="row g-4">
+							{% for team in allteam %}
+							<div class="col-lg-4  ">
+								<div class="bg-light rounded prod-item ">
+
+
+										<div class=" bg-light rounded p-4 ">
+											<div class="team-container  ">
+												<img src="/media/{{team.image}}" class="feature-item" alt="Image 1">
+
+											  </div>
+
+										</div>
+										<p class="text-center team-name">  {{team.name}}</p>
+										<p class="text-center team-pos">{{team.position}}</p>
+
+
+
+
+								</div>
+							</div>
+							{% endfor %}
+							<div class="col-lg-4">
+								<div class="bg-light rounded prod-item">
+
+
+									<div class=" bg-light rounded p-4">
+										<div class="team-container">
+											<img src="{% static 'image/team-1.jpg' %}"class="feature-item"  alt="Image 1">
+
+										  </div>
+
+									</div>
+									<p class="text-center team-name">Pasang Lama</p>
+									<p class="text-center team-pos">Managing Director</p>
+
+
+
+
+
+							</div>
+							</div>
+							<div class="col-lg-4">
+								<div class="bg-light rounded prod-item">
+
+
+									<div class=" bg-light rounded p-4">
+										<div class="team-container">
+											<img src="{% static 'image/team-1.jpg' %}" class="feature-item"  alt="Image 1">
+
+										  </div>
+
+									</div>
+									<p class="text-center team-name">Pasang Lama</p>
+									<p class="text-center team-pos">Managing Director</p>
+
+
+							</div>
+							</div>
+						</div>
+					</div>
+
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+
+
+
+
+
+<!----pagination-->
+<nav aria-label="Page navigation example">
+    <ul class="pagination justify-content-center">
+        {% if page.has_previous %}
+      <li class="page-item ">
+        <a class="page-link" href="?page={{page.previous_page_number}}" >❮</a>
+      </li>
+      {% endif %}
+
+      {% for num_page in page.paginator.page_range %}
+      <br/>
+      {% if page.number == num_page %}
+      <li class="page-item active"><a class="page-link" href="?page={{num_page}}">{{num_page}}</a></li>
+
+
+      {% else %}
+      <li class="page-item "><a class="page-link" href="?page={{num_page}}">{{num_page}}</a></li>
+        {% endif %}
+        <br/>
+      {% endfor %}
+
+
+      {% if page.has_next %}
+      <li class="page-item">
+        <a class="page-link" href="?page={{page.next_page_number}}">❯</a>
+      </li>
+      {% endif %}
+    </ul>
+  </nav>
+
+ {% endblock %}

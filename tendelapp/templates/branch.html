@@ -1,0 +1,345 @@
+{% extends 'common.html' %} {% block title %} Lawcater {% endblock %}
+{% block body %}
+ {% load static %}
+
+<!-- carosoul -->
+<section  class="item">
+    <div id="carouselExampleIndicators" class="carousel slide item-bg" data-ride="carousel">
+
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img class="d-block w-100" src=" {% static 'image/shop-2.jpg' %}"  alt="First slide">
+          </div>
+
+        </div>
+        <div class="carousel-caption d-none d-md-block">
+
+          </div>
+
+      </div>
+</section>
+
+
+	<!-- our branch -->
+	<section class="branch">
+		<!-- <p class="text-center branch-title">Our Branches</p> -->
+
+		<div class="justify-content-center d-flex ">
+
+				<a class="text-center branch-link" href="javascript:void(0)"  onclick="showBranchInfo()" id="branchInfoLink">Branch View</a>
+				<a class="text-center branch-link" href="javascript:void(0)"  onclick="showMapView()"id="mapViewLink">Map View</a>
+
+		</div>
+		  <div class="container">
+
+			<div class="row content branch-info-container">
+
+                {% for branch in allbranch %}
+				<div class="col-lg-4 col-md-6 col-sm-12 my-2 mb-4 ">
+					<div class="collapseable-card border p-0 ">
+						<div class="collapseable-card--top p-2 mb-0">
+							<div class="d-flex justify-content-between align-items-center w-100">
+								<div class="w-100">
+									<div class="d-flex justify-content-between align-items-center w-100 mb-1 border-bottom pb-2 mb-2" >
+										<h5 class="font-weight-bold mb-0  text-danger">{{ branch.main_address }}</h5>
+										<div role="button" class="text-danger" data-toggle="tooltip" data-placement="center" title="Locate on map" onclick="showMapView()" id="mapViewLink">
+											<h4 class="mb-0">
+											<svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 512 512" height="1em" width="1em"
+											xmlns="http://www.w3.org/2000/svg">
+											<path d="M256 176c-44.004 0-80.001 36-80.001 80 0 44.004 35.997 80 80.001 80 44.005 0 79.999-35.996 79.999-80 0-44-35.994-80-79.999-80zm190.938 58.667c-9.605-88.531-81.074-160-169.605-169.599V32h-42.666v33.067c-88.531 9.599-160 81.068-169.604 169.599H32v42.667h33.062c9.604 88.531 81.072 160 169.604 169.604V480h42.666v-33.062c88.531-9.604 160-81.073 169.605-169.604H480v-42.667h-33.062zM256 405.333c-82.137 0-149.334-67.198-149.334-149.333 0-82.136 67.197-149.333 149.334-149.333 82.135 0 149.332 67.198 149.332 149.333S338.135 405.333 256 405.333z">
+
+											</path>
+											</svg>
+											</h4>
+										</div>
+
+									</div>
+									<span class="text-title d-flex align-items-baseline branch-item ">
+										<span class="inline-block">
+											<div class="d-flex flex-column ">
+												<span class="branch-info">
+													<svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 384 512" class="mr-1" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
+														<path d="M172.268 501.67C26.97 291.031 0 269.413 0 192 0 85.961 85.961 0 192 0s192 85.961 192 192c0 77.413-26.97 99.031-172.268 309.67-9.535 13.774-29.93 13.773-39.464 0zM192 272c44.183 0 80-35.817 80-80s-35.817-80-80-80-80 35.817-80 80 35.817 80 80 80z">
+
+														</path>
+													</svg>
+													{{ branch.location }}
+
+													<!-- <p class="city-name">Banepa Rural Municipality-03</p> -->
+												</span>
+													<span class="branch-info">
+														<svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 1024 1024" class="mr-1 " height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
+															<path d="M877.1 238.7L770.6 132.3c-13-13-30.4-20.3-48.8-20.3s-35.8 7.2-48.8 20.3L558.3 246.8c-13 13-20.3 30.5-20.3 48.9 0 18.5 7.2 35.8 20.3 48.9l89.6 89.7a405.46 405.46 0 0 1-86.4 127.3c-36.7 36.9-79.6 66-127.2 86.6l-89.6-89.7c-13-13-30.4-20.3-48.8-20.3a68.2 68.2 0 0 0-48.8 20.3L132.3 673c-13 13-20.3 30.5-20.3 48.9 0 18.5 7.2 35.8 20.3 48.9l106.4 106.4c22.2 22.2 52.8 34.9 84.2 34.9 6.5 0 12.8-.5 19.2-1.6 132.4-21.8 263.8-92.3 369.9-198.3C818 606 888.4 474.6 910.4 342.1c6.3-37.6-6.3-76.3-33.3-103.4zm-37.6 91.5c-19.5 117.9-82.9 235.5-178.4 331s-213 158.9-330.9 178.4c-14.8 2.5-30-2.5-40.8-13.2L184.9 721.9 295.7 611l119.8 120 .9.9 21.6-8a481.29 481.29 0 0 0 285.7-285.8l8-21.6-120.8-120.7 110.8-110.9 104.5 104.5c10.8 10.8 15.8 26 13.3 40.8z">
+
+															</path>
+														</svg>
+														<a class="text-title d-inline-block" href="">{{branch.phone.national_number }} &nbsp;</a>
+													</span>
+												</div>
+											</span>
+										</span>
+									</div>
+								</div>
+							</div>
+
+
+											<div class="text-center collapse-btn  null accordion-header" onclick="toggleAccordion(this)">
+
+																<div class="accordion-icon-container">
+																	<span class="accordion-icon fa">&#xf107;</span>
+																	<!-- <i class="fa fa-angle-down accordion-icon" ></i> -->
+																 </div>
+															</div>
+
+															<div class="collapseable-card--bottom justify-content-end border null accordion-body" style="max-height: 0; overflow: hidden;">
+																<div class=""></div>
+																<div class="border-top border-line-top">
+																	<div class="d-flex flex-column pt-3 px-2 py-2">
+																		<h6 class="text-black">Branch Manager Details</h6>
+																		<span class="text-title">
+																			<svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 1024 1024" class="mr-1 " height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
+																				<path d="M858.5 763.6a374 374 0 0 0-80.6-119.5 375.63 375.63 0 0 0-119.5-80.6c-.4-.2-.8-.3-1.2-.5C719.5 518 760 444.7 760 362c0-137-111-248-248-248S264 225 264 362c0 82.7 40.5 156 102.8 201.1-.4.2-.8.3-1.2.5-44.8 18.9-85 46-119.5 80.6a375.63 375.63 0 0 0-80.6 119.5A371.7 371.7 0 0 0 136 901.8a8 8 0 0 0 8 8.2h60c4.4 0 7.9-3.5 8-7.8 2-77.2 33-149.5 87.8-204.3 56.7-56.7 132-87.9 212.2-87.9s155.5 31.2 212.2 87.9C779 752.7 810 825 812 902.2c.1 4.4 3.6 7.8 8 7.8h60a8 8 0 0 0 8-8.2c-1-47.8-10.9-94.3-29.5-138.2zM512 534c-45.9 0-89.1-17.9-121.6-50.4S340 407.9 340 362c0-45.9 17.9-89.1 50.4-121.6S466.1 190 512 190s89.1 17.9 121.6 50.4S684 316.1 684 362c0 45.9-17.9 89.1-50.4 121.6S557.9 534 512 534z">
+
+																				</path>
+																			</svg> {{ branch.manager_name }}
+																		</span>
+																		<span><a class=" text-title" href="tel:9860852000">
+																			<svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 1024 1024" class="mr-1 " height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
+																				<path d="M877.1 238.7L770.6 132.3c-13-13-30.4-20.3-48.8-20.3s-35.8 7.2-48.8 20.3L558.3 246.8c-13 13-20.3 30.5-20.3 48.9 0 18.5 7.2 35.8 20.3 48.9l89.6 89.7a405.46 405.46 0 0 1-86.4 127.3c-36.7 36.9-79.6 66-127.2 86.6l-89.6-89.7c-13-13-30.4-20.3-48.8-20.3a68.2 68.2 0 0 0-48.8 20.3L132.3 673c-13 13-20.3 30.5-20.3 48.9 0 18.5 7.2 35.8 20.3 48.9l106.4 106.4c22.2 22.2 52.8 34.9 84.2 34.9 6.5 0 12.8-.5 19.2-1.6 132.4-21.8 263.8-92.3 369.9-198.3C818 606 888.4 474.6 910.4 342.1c6.3-37.6-6.3-76.3-33.3-103.4zm-37.6 91.5c-19.5 117.9-82.9 235.5-178.4 331s-213 158.9-330.9 178.4c-14.8 2.5-30-2.5-40.8-13.2L184.9 721.9 295.7 611l119.8 120 .9.9 21.6-8a481.29 481.29 0 0 0 285.7-285.8l8-21.6-120.8-120.7 110.8-110.9 104.5 104.5c10.8 10.8 15.8 26 13.3 40.8z">
+
+                                                                                </path></svg> {{ branch.manager_contact }}</a></span>
+																				<span><a class=" text-title" href="mailto:urgenlama33@gmail.com">
+																					<svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 1024 1024" class="mr-1 " height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
+																						<path d="M928 160H96c-17.7 0-32 14.3-32 32v640c0 17.7 14.3 32 32 32h832c17.7 0 32-14.3 32-32V192c0-17.7-14.3-32-32-32zm-40 110.8V792H136V270.8l-27.6-21.5 39.3-50.5 42.8 33.3h643.1l42.8-33.3 39.3 50.5-27.7 21.5zM833.6 232L512 482 190.4 232l-42.8-33.3-39.3 50.5 27.6 21.5 341.6 265.6a55.99 55.99 0 0 0 68.7 0L888 270.8l27.6-21.5-39.3-50.5-42.7 33.2z">
+
+																						</path>
+																					</svg> {{ branch.manager_email }}</a>
+																				</span>
+																			</div>
+																		</div>
+
+																				<div class="border-top border-line-top">
+
+																				</div>
+																			</div>
+														</div>
+				</div>
+                {% endfor %}
+
+				<!-- <div class="col-lg-4 col-md-3 col-sm-6 my-2 mb-4 col">
+					<div class="collapseable-card border p-0 ">
+						<div class="collapseable-card--top p-2 mb-0">
+							<div class="d-flex justify-content-between align-items-center w-100">
+								<div class="w-100">
+									<div class="d-flex justify-content-between align-items-center w-100 mb-1 border-bottom pb-2 mb-2">
+										<h5 class="font-weight-bold mb-0  text-danger">Banepa</h5>
+
+									</div>
+									<span class="text-title d-flex align-items-baseline branch-item ">
+										<span class="inline-block">
+											<div class="d-flex flex-column ">
+												<span class="branch-info">
+													<svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 384 512" class="mr-1" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
+														<path d="M172.268 501.67C26.97 291.031 0 269.413 0 192 0 85.961 85.961 0 192 0s192 85.961 192 192c0 77.413-26.97 99.031-172.268 309.67-9.535 13.774-29.93 13.773-39.464 0zM192 272c44.183 0 80-35.817 80-80s-35.817-80-80-80-80 35.817-80 80 35.817 80 80 80z">
+
+														</path>
+													</svg>
+													Banepa Rural Municipality-03
+
+												</span>
+													<span class="branch-info">
+														<svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 1024 1024" class="mr-1 " height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
+															<path d="M877.1 238.7L770.6 132.3c-13-13-30.4-20.3-48.8-20.3s-35.8 7.2-48.8 20.3L558.3 246.8c-13 13-20.3 30.5-20.3 48.9 0 18.5 7.2 35.8 20.3 48.9l89.6 89.7a405.46 405.46 0 0 1-86.4 127.3c-36.7 36.9-79.6 66-127.2 86.6l-89.6-89.7c-13-13-30.4-20.3-48.8-20.3a68.2 68.2 0 0 0-48.8 20.3L132.3 673c-13 13-20.3 30.5-20.3 48.9 0 18.5 7.2 35.8 20.3 48.9l106.4 106.4c22.2 22.2 52.8 34.9 84.2 34.9 6.5 0 12.8-.5 19.2-1.6 132.4-21.8 263.8-92.3 369.9-198.3C818 606 888.4 474.6 910.4 342.1c6.3-37.6-6.3-76.3-33.3-103.4zm-37.6 91.5c-19.5 117.9-82.9 235.5-178.4 331s-213 158.9-330.9 178.4c-14.8 2.5-30-2.5-40.8-13.2L184.9 721.9 295.7 611l119.8 120 .9.9 21.6-8a481.29 481.29 0 0 0 285.7-285.8l8-21.6-120.8-120.7 110.8-110.9 104.5 104.5c10.8 10.8 15.8 26 13.3 40.8z">
+
+															</path>
+														</svg>
+														<a class="text-title d-inline-block" href="tel:9856017094">9856017094 &nbsp;</a>
+													</span>
+												</div>
+											</span>
+										</span>
+									</div>
+								</div>
+							</div>
+
+
+											<div class="text-center collapse-btn  null accordion-header" onclick="toggleAccordion(this)">
+
+																<div class="accordion-icon-container">
+																	<span class="accordion-icon fa">&#xf107;</span>
+
+																 </div>
+															</div>
+
+															<div class="collapseable-card--bottom justify-content-end border null accordion-body" style="max-height: 0; overflow: hidden;">
+																<div class=""></div>
+																<div class="border-top border-line-top">
+																	<div class="d-flex flex-column pt-3 px-2 py-2">
+																		<h6 class="text-black">Branch Manager Details</h6>
+																		<span class="text-title">
+																			<svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 1024 1024" class="mr-1 " height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
+																				<path d="M858.5 763.6a374 374 0 0 0-80.6-119.5 375.63 375.63 0 0 0-119.5-80.6c-.4-.2-.8-.3-1.2-.5C719.5 518 760 444.7 760 362c0-137-111-248-248-248S264 225 264 362c0 82.7 40.5 156 102.8 201.1-.4.2-.8.3-1.2.5-44.8 18.9-85 46-119.5 80.6a375.63 375.63 0 0 0-80.6 119.5A371.7 371.7 0 0 0 136 901.8a8 8 0 0 0 8 8.2h60c4.4 0 7.9-3.5 8-7.8 2-77.2 33-149.5 87.8-204.3 56.7-56.7 132-87.9 212.2-87.9s155.5 31.2 212.2 87.9C779 752.7 810 825 812 902.2c.1 4.4 3.6 7.8 8 7.8h60a8 8 0 0 0 8-8.2c-1-47.8-10.9-94.3-29.5-138.2zM512 534c-45.9 0-89.1-17.9-121.6-50.4S340 407.9 340 362c0-45.9 17.9-89.1 50.4-121.6S466.1 190 512 190s89.1 17.9 121.6 50.4S684 316.1 684 362c0 45.9-17.9 89.1-50.4 121.6S557.9 534 512 534z">
+
+																				</path>
+																			</svg> Urgen Lama
+																		</span>
+																		<span><a class=" text-title" href="tel:9860852000">
+																			<svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 1024 1024" class="mr-1 " height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
+																				<path d="M877.1 238.7L770.6 132.3c-13-13-30.4-20.3-48.8-20.3s-35.8 7.2-48.8 20.3L558.3 246.8c-13 13-20.3 30.5-20.3 48.9 0 18.5 7.2 35.8 20.3 48.9l89.6 89.7a405.46 405.46 0 0 1-86.4 127.3c-36.7 36.9-79.6 66-127.2 86.6l-89.6-89.7c-13-13-30.4-20.3-48.8-20.3a68.2 68.2 0 0 0-48.8 20.3L132.3 673c-13 13-20.3 30.5-20.3 48.9 0 18.5 7.2 35.8 20.3 48.9l106.4 106.4c22.2 22.2 52.8 34.9 84.2 34.9 6.5 0 12.8-.5 19.2-1.6 132.4-21.8 263.8-92.3 369.9-198.3C818 606 888.4 474.6 910.4 342.1c6.3-37.6-6.3-76.3-33.3-103.4zm-37.6 91.5c-19.5 117.9-82.9 235.5-178.4 331s-213 158.9-330.9 178.4c-14.8 2.5-30-2.5-40.8-13.2L184.9 721.9 295.7 611l119.8 120 .9.9 21.6-8a481.29 481.29 0 0 0 285.7-285.8l8-21.6-120.8-120.7 110.8-110.9 104.5 104.5c10.8 10.8 15.8 26 13.3 40.8z"></path></svg> 9856017094</a></span>
+																				<span><a class=" text-title" href="mailto:urgenlama33@gmail.com">
+																					<svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 1024 1024" class="mr-1 " height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
+																						<path d="M928 160H96c-17.7 0-32 14.3-32 32v640c0 17.7 14.3 32 32 32h832c17.7 0 32-14.3 32-32V192c0-17.7-14.3-32-32-32zm-40 110.8V792H136V270.8l-27.6-21.5 39.3-50.5 42.8 33.3h643.1l42.8-33.3 39.3 50.5-27.7 21.5zM833.6 232L512 482 190.4 232l-42.8-33.3-39.3 50.5 27.6 21.5 341.6 265.6a55.99 55.99 0 0 0 68.7 0L888 270.8l27.6-21.5-39.3-50.5-42.7 33.2z">
+
+																						</path>
+																					</svg> urgenlama@gmail.com</a>
+																				</span>
+																			</div>
+																		</div>
+
+																				<div class="border-top border-line-top">
+
+																				</div>
+																			</div>
+														</div>
+				</div> -->
+
+
+
+
+
+		  </div>
+
+		  <!-- google map -->
+		  <div class="map-container">
+			<div class="contact-container googlemap">
+				<!-- <h5 class="titles " data-wow-delay="0.1s">Map View</h2> -->
+				<div class="contact-info" data-wow-delay="0.1s">
+					<div class="google-map " data-wow-delay="0.1s"id="map">
+						<!-- <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3534.8940347417542!2d85.52059027479832!3d27.627798328996636!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39eb09c614ab615f%3A0x6af270ba59691ae8!2sTENDEL%20Hardware%20Pvt.Ltd!5e0!3m2!1sen!2snp!4v1683519619766!5m2!1sen!2snp" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+						</iframe> -->
+
+				   </div>
+
+					<div class="details">
+						<h5>Locate Us in Map </h5>
+						<div>
+
+							<div class="list-group">
+							  {% for branch in allbranch %}
+
+								<a href="javascript:void(0)"  onclick="showMap('{{ branch.map_link }}')" class="list-group-item list-group-item-action flex-column align-items-start  branch-list">
+								  <div class="row">
+									<div class="col-2 color-red">
+
+										<svg stroke="currentColor" class="locateicon"  fill="currentColor" stroke-width="0" viewBox="0 0 512 512" height="1em" width="1em"
+										xmlns="http://www.w3.org/2000/svg">
+										<path d="M256 176c-44.004 0-80.001 36-80.001 80 0 44.004 35.997 80 80.001 80 44.005 0 79.999-35.996 79.999-80 0-44-35.994-80-79.999-80zm190.938 58.667c-9.605-88.531-81.074-160-169.605-169.599V32h-42.666v33.067c-88.531 9.599-160 81.068-169.604 169.599H32v42.667h33.062c9.604 88.531 81.072 160 169.604 169.604V480h42.666v-33.062c88.531-9.604 160-81.073 169.605-169.604H480v-42.667h-33.062zM256 405.333c-82.137 0-149.334-67.198-149.334-149.333 0-82.136 67.197-149.333 149.334-149.333 82.135 0 149.332 67.198 149.332 149.333S338.135 405.333 256 405.333z">
+
+										</path>
+										</svg>
+
+									</div>
+								  <div class=" col-10  push-left">
+									<h6 class="title-branch">{{ branch.main_address }}</h6>
+									<h6 class="sec-title"><i class='	fas fa-map-marker-alt color-red '></i>Banepa municipality 6</h6>
+
+
+								  </div>
+
+								</div>
+								</a>
+								{% endfor %}
+
+
+								<!-- <a href="#" class="list-group-item list-group-item-action flex-column align-items-start  branch-list">
+								  <div class="row">
+									<div class="col-2">
+
+										<svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 512 512" height="1em" width="1em"
+										xmlns="http://www.w3.org/2000/svg">
+										<path d="M256 176c-44.004 0-80.001 36-80.001 80 0 44.004 35.997 80 80.001 80 44.005 0 79.999-35.996 79.999-80 0-44-35.994-80-79.999-80zm190.938 58.667c-9.605-88.531-81.074-160-169.605-169.599V32h-42.666v33.067c-88.531 9.599-160 81.068-169.604 169.599H32v42.667h33.062c9.604 88.531 81.072 160 169.604 169.604V480h42.666v-33.062c88.531-9.604 160-81.073 169.605-169.604H480v-42.667h-33.062zM256 405.333c-82.137 0-149.334-67.198-149.334-149.333 0-82.136 67.197-149.333 149.334-149.333 82.135 0 149.332 67.198 149.332 149.333S338.135 405.333 256 405.333z">
+
+										</path>
+										</svg>
+
+									</div>
+								  <div class=" col-10  ">
+									<h6 class="title-branch">Ramhiti, Kathmandu</h6>
+									<h6 class="sec-title"><i class='	fas fa-map-marker-alt color-red '></i>Banepa municipality 6</h6>
+
+
+								  </div>
+
+								</div>
+								</a> -->
+
+
+
+
+
+
+
+
+
+
+
+							  </div>
+
+
+
+
+
+
+						</div>
+
+
+					</div>
+
+				</div>
+
+			  </div>
+
+		  </div>
+		  </div>
+
+
+	</section>
+
+
+
+
+<!----pagination-->
+<nav aria-label="Page navigation example">
+    <ul class="pagination justify-content-center">
+        {% if page.has_previous %}
+      <li class="page-item ">
+        <a class="page-link" href="?page={{page.previous_page_number}}" >❮</a>
+      </li>
+      {% endif %}
+
+      {% for num_page in page.paginator.page_range %}
+      <br/>
+      {% if page.number == num_page %}
+      <li class="page-item active"><a class="page-link" href="?page={{num_page}}">{{num_page}}</a></li>
+
+
+      {% else %}
+      <li class="page-item "><a class="page-link" href="?page={{num_page}}">{{num_page}}</a></li>
+        {% endif %}
+        <br/>
+      {% endfor %}
+
+
+      {% if page.has_next %}
+      <li class="page-item">
+        <a class="page-link" href="?page={{page.next_page_number}}">❯</a>
+      </li>
+      {% endif %}
+    </ul>
+  </nav>
+
+
+
+
+
+ {% endblock %}

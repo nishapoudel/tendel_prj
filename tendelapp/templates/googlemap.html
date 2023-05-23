@@ -1,0 +1,125 @@
+{% extends 'common.html' %} {% block title %} Lawcater {% endblock %}
+{% block body %}
+ {% load static %}
+
+<!-- carosoul -->
+<section  class="item">
+    <div id="carouselExampleIndicators" class="carousel slide item-bg" data-ride="carousel">
+
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img class="d-block w-100" src=" {% static 'image/shop-2.jpg' %}"  alt="First slide">
+          </div>
+
+        </div>
+        <div class="carousel-caption d-none d-md-block">
+
+          </div>
+
+      </div>
+</section>
+
+
+
+
+	<!--contact div started-->
+
+
+    <div class="contact-container googlemap">
+        <h5 class="titles wow fadeInUp" data-wow-delay="0.1s">Map View</h2>
+        <div class="contact-info wow fadeInUp" data-wow-delay="0.1s">
+            <div class="google-map wow fadeInUp" data-wow-delay="0.1s"id="map">
+                <!-- <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3534.8940347417542!2d85.52059027479832!3d27.627798328996636!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39eb09c614ab615f%3A0x6af270ba59691ae8!2sTENDEL%20Hardware%20Pvt.Ltd!5e0!3m2!1sen!2snp!4v1683519619766!5m2!1sen!2snp" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+                </iframe> -->
+
+           </div>
+
+            <div class="details">
+                <h5>Locate Us in Map </h5>
+                <div>
+
+                    <div class="list-group">
+                      {% for branch in allbranch %}
+
+                        <a href="javascript:void(0)"  onclick="showMap('{{ branch.map_link }}')" class="list-group-item list-group-item-action flex-column align-items-start  branch-list">
+                          <div class="row">
+                            <div class="col-2 color-red">
+
+                                <svg stroke="currentColor" class="locateicon"  fill="currentColor" stroke-width="0" viewBox="0 0 512 512" height="1em" width="1em"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path d="M256 176c-44.004 0-80.001 36-80.001 80 0 44.004 35.997 80 80.001 80 44.005 0 79.999-35.996 79.999-80 0-44-35.994-80-79.999-80zm190.938 58.667c-9.605-88.531-81.074-160-169.605-169.599V32h-42.666v33.067c-88.531 9.599-160 81.068-169.604 169.599H32v42.667h33.062c9.604 88.531 81.072 160 169.604 169.604V480h42.666v-33.062c88.531-9.604 160-81.073 169.605-169.604H480v-42.667h-33.062zM256 405.333c-82.137 0-149.334-67.198-149.334-149.333 0-82.136 67.197-149.333 149.334-149.333 82.135 0 149.332 67.198 149.332 149.333S338.135 405.333 256 405.333z">
+
+                                </path>
+                                </svg>
+
+                            </div>
+                          <div class=" col-10  push-left">
+                            <h6 class="title-branch">{{ branch.main_address }}</h6>
+                            <h6 class="sec-title"><i class='	fas fa-map-marker-alt color-red '></i>Banepa municipality 6</h6>
+
+
+                          </div>
+
+                        </div>
+                        </a>
+                        {% endfor %}
+
+
+                        <!-- <a href="#" class="list-group-item list-group-item-action flex-column align-items-start  branch-list">
+                          <div class="row">
+                            <div class="col-2">
+
+                                <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 512 512" height="1em" width="1em"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path d="M256 176c-44.004 0-80.001 36-80.001 80 0 44.004 35.997 80 80.001 80 44.005 0 79.999-35.996 79.999-80 0-44-35.994-80-79.999-80zm190.938 58.667c-9.605-88.531-81.074-160-169.605-169.599V32h-42.666v33.067c-88.531 9.599-160 81.068-169.604 169.599H32v42.667h33.062c9.604 88.531 81.072 160 169.604 169.604V480h42.666v-33.062c88.531-9.604 160-81.073 169.605-169.604H480v-42.667h-33.062zM256 405.333c-82.137 0-149.334-67.198-149.334-149.333 0-82.136 67.197-149.333 149.334-149.333 82.135 0 149.332 67.198 149.332 149.333S338.135 405.333 256 405.333z">
+
+                                </path>
+                                </svg>
+
+                            </div>
+                          <div class=" col-10  ">
+                            <h6 class="title-branch">Ramhiti, Kathmandu</h6>
+                            <h6 class="sec-title"><i class='	fas fa-map-marker-alt color-red '></i>Banepa municipality 6</h6>
+
+
+                          </div>
+
+                        </div>
+                        </a> -->
+
+
+
+
+
+
+
+
+
+
+
+                      </div>
+
+
+
+
+
+
+                </div>
+
+
+            </div>
+
+        </div>
+
+      </div>
+      <!--contact ended-->
+
+
+
+
+
+
+
+
+
+ {% endblock %}

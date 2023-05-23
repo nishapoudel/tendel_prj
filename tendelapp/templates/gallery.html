@@ -1,0 +1,111 @@
+{% extends 'common.html' %} {% block title %} Lawcater {% endblock %}
+{% block body %}
+ {% load static %}
+
+<!-- carosoul -->
+<section  class="item">
+    <div id="carouselExampleIndicators" class="carousel slide item-bg" data-ride="carousel">
+
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img class="d-block w-100" src=" {% static 'image/shop-2.jpg' %}"  alt="First slide">
+          </div>
+
+        </div>
+        <div class="carousel-caption d-none d-md-block">
+
+          </div>
+
+      </div>
+</section>
+
+
+
+
+	<div class="container-xxl py-2" id="feature">
+		<div class="container py-2 px-lg-5">
+			<div class="text-center wow fadeInUp" data-wow-delay="0.1s">
+
+				<h5 class="mb-5  fw-medium branch-title">Our Gallery</h1>
+			</div>
+			<div class="row g-4">
+                {% for i in allitem %}
+				<div class="col-lg-4 col-md-6 wow fadeInUp col-prod" data-wow-delay="0.1s" data-toggle="modal" data-target="#item-modal-{{ i.gallery_id }}">
+					<div class="feature-item bg-light rounded p-4">
+						<div class="image-container">
+							<img src="/media/{{i.image}}" alt="Image 1">
+
+						  </div>
+
+
+
+
+					</div>
+				</div>
+
+				<!-- Modal -->
+
+				<div class="modal fade" id="item-modal-{{ i.gallery_id }}" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+					<div class="modal-dialog modal-dialog-centered" role="document">
+					  <div class="modal-content">
+						<div class="modal-header">
+
+						  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+							<span aria-hidden="true">&times;</span>
+
+						  </button>
+						</div>
+						<div class="modal-body modal-con">
+
+								<img src="/media/{{i.image}}" class="img-fluid" alt="Image 1">
+
+
+						</div>
+
+					  </div>
+					</div>
+				  </div>
+                {% endfor %}
+
+
+
+			</div>
+		</div>
+	</div>
+	<!-- Features End -->
+
+
+
+
+<!----pagination-->
+<nav aria-label="Page navigation example">
+    <ul class="pagination justify-content-center">
+        {% if page.has_previous %}
+      <li class="page-item ">
+        <a class="page-link" href="?page={{page.previous_page_number}}" >❮</a>
+      </li>
+      {% endif %}
+
+      {% for num_page in page.paginator.page_range %}
+      <br/>
+      {% if page.number == num_page %}
+      <li class="page-item active"><a class="page-link" href="?page={{num_page}}">{{num_page}}</a></li>
+
+
+      {% else %}
+      <li class="page-item "><a class="page-link" href="?page={{num_page}}">{{num_page}}</a></li>
+        {% endif %}
+        <br/>
+      {% endfor %}
+
+
+      {% if page.has_next %}
+      <li class="page-item">
+        <a class="page-link" href="?page={{page.next_page_number}}">❯</a>
+      </li>
+      {% endif %}
+    </ul>
+  </nav>
+
+
+ {% endblock %}

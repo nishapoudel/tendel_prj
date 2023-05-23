@@ -1,0 +1,111 @@
+{% extends 'common.html' %} {% block title %} Lawcater {% endblock %}
+{% block body %}
+ {% load static %}
+
+<!-- carosoul -->
+<section  class="item">
+    <div id="carouselExampleIndicators" class="carousel slide item-bg" data-ride="carousel">
+
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img class="d-block w-100" src=" {% static 'image/shop-2.jpg' %}"  alt="First slide">
+          </div>
+
+        </div>
+        <div class="carousel-caption d-none d-md-block">
+
+          </div>
+
+      </div>
+</section>
+
+
+
+	<!-- about -->
+	<section class="about-section">
+		<p class="text-center branch-title">About Us</p>
+	 <div class="container-xxl " id="about">
+            <div class="container py-5 ">
+                <div class="row g-5 align-items-center about">
+                    <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s">
+                        <h5 class="text-primary-gradient fw-medium">Welcome to Tendel Hardware! </h5>
+						<p class="mb-4"> We are a leading supplier of building construction materials, tools, and equipment with multiple branches located in different areas. At Tendel Hardware, we are committed to providing our customers with high-quality products, exceptional customer service, and competitive prices.</p>
+
+                        <p class="mb-4">At Tendel Hardware, we believe that exceptional customer service is the key to building long-lasting relationships with our customers. Our knowledgeable staff is always available to answer any questions you may have about our products or services. We can also provide expert advice on which products are best suited for your specific project, ensuring that you have the right tools and materials to get the job done. </p>
+
+                    </div>
+                    <div class="col-lg-6">
+                        <img class="img-about wow fadeInUp" data-wow-delay="0.5s" src="{% static 'image/tendel-about.jpg' %}">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+       <div class="container our-mission">
+        <div class=" ">
+            <div class="row">
+                <div class="col-3 vision">
+                <!-- <h6 class="">Our mission</h6> -->
+                <img src="{% static 'image/nav-2.jpg' %}" >
+
+            </div>
+
+            <div class="col-9">
+                <p>
+                    At Tendel Hardware, our mission is to provide a comprehensive range of high-quality
+                     construction hardware products to meet the diverse needs of our customers. We aim to be the
+                      go-to destination for contractors, builders, and do-it-yourself enthusiasts,
+                     offering a one-stop solution for all their construction and home improvement requirements.
+
+                </p>
+            </div>
+            </div>
+            <div class="row">
+                <div class="col-3 vision">
+
+                    <img src="{% static 'image/n-1.png' %}" >
+                </div>
+
+                <div class="col-9 ">
+
+                    <p>
+                        Our vision is to create
+                      a shopping experience that is convenient, efficient, and tailored to the unique needs of our customers.
+                      By continuously innovating and staying ahead of industry trends, we strive to be the trusted partner for
+                       both professionals and homeowners,
+                    providing them with the tools and materials they need to build and improve their spaces.
+
+                    </p>
+                </div>
+
+                </div>
+            <div class="row">
+                <div class="col-3 values">
+                    <!-- <h6 class="">Our Values</h6> -->
+                    <img src="{% static 'image/n-6.png' %}" >
+
+                </div>
+
+                <div class="col-9">
+                    <p>
+                        Our values are at the heart of everything we do. First and foremost, we prioritize quality,
+                        offering only top-quality construction hardware products from reputable brands.
+                        Customer satisfaction is another key value we hold dear. We listen to our customers'
+                         needs, provide personalized assistance, and offer prompt solutions to their queries and concerns.
+
+                    </p>
+                </div>
+
+
+                </div>
+        </div>
+    </div>
+	</section>
+
+
+
+
+
+
+
+ {% endblock %}

@@ -1,0 +1,214 @@
+{% extends 'common.html' %} {% block title %} Lawcater {% endblock %}
+{% block body %}
+ {% load static %}
+
+<!-- carosoul -->
+<section  class="item">
+    <div id="carouselExampleIndicators" class="carousel slide item-bg" data-ride="carousel">
+
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img class="d-block w-100" src=" {% static 'image/shop-2.jpg' %}"  alt="First slide">
+          </div>
+
+        </div>
+        <div class="carousel-caption d-none d-md-block">
+
+          </div>
+
+      </div>
+</section>
+
+
+
+	<!-- news and notice -->
+	<section class="news" >
+		<h1 class="title-news branch-title ">News and Notice</h1>
+		<div class="news-rows">
+			<div class="news-slider">
+                {% for news in allnews %}
+
+				<div class="col-lg-4 col-md-4 col-news " data-toggle="modal" data-target="#news-modal-{{ news.news_id }}">
+					 <div class="news-box wow fadeInUp  " data-wow-delay="0.5s" >
+						 <div class="news-text">
+
+
+									<p class="address">{{ news.title }}</class=></p>
+
+
+							 <div class="news-detail">
+							 <p class="news-content">
+								{{ news.body }}
+							 </p>
+							 </div>
+
+							 <p class="text-right">{{ news.name }}</p>
+
+
+
+						 </div>
+
+					 </div>
+					</div>
+
+					<!-- Modal -->
+
+					<div class="modal fade" id="news-modal-{{ news.news_id }}" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+						<div class="modal-dialog modal-dialog-centered" role="document">
+						  <div class="modal-content">
+							<div class="modal-header">
+							  <h5 class="modal-title" id="exampleModalLongTitle">{{ news.title }}</h5>
+							  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+								<span aria-hidden="true">&times;</span>
+							  </button>
+							</div>
+							<div class="modal-body modal-con">
+								{{ news.body }}
+							</div>
+							<div class="modal-footer">
+								<p class="text-right">{{ news.name }}</p>
+
+							</div>
+						  </div>
+						</div>
+					  </div>
+
+
+
+
+
+
+
+
+
+
+                    {% endfor %}
+					<div class="col-lg-4 col-md-4 col-news">
+					 <div class="news-box  wow fadeInUp  " data-wow-delay="0.5s" >
+						<div class="news-text">
+
+
+								   <p class="address">सूचना!! सूचना!! सूचना!!</class=></p>
+
+
+							<div class="news-detail">
+							<p class="news-content">
+                                तेण्डेल हार्डवयर पा. लि. को सम्पूर्ण कार्यालय तथा सेवाहरु
+                                वन्द रहने जानकारी गर्दछौं र सम्पूर्ण ग्राहाक महानुभावहरुमा
+                                पर्न गएको असुविधा प्रति क्षमा प्रार्थी व्यक्त गर्दछौं ।
+							</p>
+							</div>
+							<p class="text-right notice">तेण्डेल हार्डवयर प्रा. लि.</p>
+                            <p class="text-right notice">बनेपा ७ काभ्रे</p>
+                            <p class="text-right notice">प्रशासन शाखा</p>
+
+
+
+
+
+						</div>
+
+					</div>
+					</div>
+
+					<div class="col-lg-4 col-md-4 col-news">
+					<div class="news-box  wow fadeInUp  " data-wow-delay="0.5s" >
+						<div class="news-text ">
+
+
+								   <p class="address">सूचना!! सूचना!! सूचना!!</class=></p>
+
+
+							<div class="news-detail">
+							<p>
+							   बैंकहरुको ब्याजदर घट्दो क्रममा देखिए पनि एकल अंकमा आउन भने समय लाग्ने देखिएको छ । चालु आर्थिक वर्षको तेस्रो त्रैमासमा बैंकहरुको आधार दर (बेस रेट) घट्दो क्रममा देखिए पनि दोहोरो अंकमा नै देखिएको छ ।
+							   नेपाल राष्ट्र बैंकले कर्जाको ब्याजदरलाई आधार दरसँग आवद्ध गराएको छ.
+							</p>
+							</div>
+							<p class="text-right">ब्याजदर</p>
+
+
+						</div>
+
+					</div>
+					</div>
+					<div class="col-lg-4 col-md-4 col-news">
+						<div class="news-box  wow fadeInUp  " data-wow-delay="0.5s" >
+							<div class="news-text">
+
+
+									   <p class="address">सूचना!! सूचना!! सूचना!!</class=></p>
+
+
+								<div class="news-detail">
+								<p>
+								   बैंकहरुको ब्याजदर घट्दो क्रममा देखिए पनि एकल अंकमा आउन भने समय लाग्ने देखिएको छ । चालु आर्थिक वर्षको तेस्रो त्रैमासमा बैंकहरुको आधार दर (बेस रेट) घट्दो क्रममा देखिए पनि दोहोरो अंकमा नै देखिएको छ ।
+								   नेपाल राष्ट्र बैंकले कर्जाको ब्याजदरलाई आधार दरसँग आवद्ध गराएको छ.
+								</p>
+								</div>
+								<p class="text-right">ब्याजदर</p>
+
+
+							</div>
+
+						</div>
+						</div>
+
+
+
+					</div>
+
+
+
+
+
+
+
+
+
+			</div>
+
+
+
+
+
+
+			</div>
+	</section>
+
+
+
+
+<!----pagination-->
+<nav aria-label="Page navigation example">
+    <ul class="pagination justify-content-center">
+        {% if page.has_previous %}
+      <li class="page-item ">
+        <a class="page-link" href="?page={{page.previous_page_number}}" >❮</a>
+      </li>
+      {% endif %}
+
+      {% for num_page in page.paginator.page_range %}
+      <br/>
+      {% if page.number == num_page %}
+      <li class="page-item active"><a class="page-link" href="?page={{num_page}}">{{num_page}}</a></li>
+
+
+      {% else %}
+      <li class="page-item "><a class="page-link" href="?page={{num_page}}">{{num_page}}</a></li>
+        {% endif %}
+        <br/>
+      {% endfor %}
+
+
+      {% if page.has_next %}
+      <li class="page-item">
+        <a class="page-link" href="?page={{page.next_page_number}}">❯</a>
+      </li>
+      {% endif %}
+    </ul>
+  </nav>
+
+
+
+ {% endblock %}

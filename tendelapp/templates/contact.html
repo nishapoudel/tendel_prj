@@ -1,0 +1,121 @@
+{% extends 'common.html' %} {% block title %} Lawcater {% endblock %}
+{% block body %}
+ {% load static %}
+
+<!-- carosoul -->
+<section  class="item">
+    <div id="carouselExampleIndicators" class="carousel slide item-bg" data-ride="carousel">
+
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img class="d-block w-100" src=" {% static 'image/shop-2.jpg' %}"  alt="First slide">
+          </div>
+
+        </div>
+        <div class="carousel-caption d-none d-md-block">
+
+          </div>
+
+      </div>
+</section>
+
+
+
+
+	<!--contact div started-->
+
+
+    <div class="contact-container">
+        <h5 class="titles wow fadeInUp" data-wow-delay="0.1s">Get in Touch</h2>
+        <div class="contact-info wow fadeInUp" data-wow-delay="0.1s">
+            <form class="forms" >
+                <h6>Write Us</h6>
+                <input type="text" name="fullname" id="fullname" placeholder="Full Name" required>
+                <input type="email" name="email" id="email" placeholder="Email" required>
+                <input type="tel" name="tel" id="tel" placeholder="tel: XXX XXX XXXX" required>
+                <textarea name="msg" id="msg" cols="30" rows="10" placeholder="Your Message Here..."></textarea>
+                <button type="submit">Send</button>
+            </form>
+            <div class="details">
+                <h5>Contact Us </h5>
+                <div class="contact-items-wrapper">
+                    <!-- <div class="contact-items">
+                        <i class='fa fa-car'></i>
+                        <p class="details-title"><strong>Address:</strong></p>
+                        <p class="sub-title">Banepa</p>
+                      </div> -->
+
+                      <div class="contact-box">
+                      <i class='fa fa-map-marker'></i>
+                        <p class="details-title"><strong>Address:</strong> </p>
+                        <p class="sub-title"> Banepa</p>
+                    </div>
+
+                    <div class="contact-box">
+                        <i class='fa fa-phone'></i>
+                          <p class="details-title"><strong>Phone:</strong> </p>
+                          <p class="sub-title"> 01234643</p>
+                    </div>
+                      <div class="contact-box">
+                        <i class='fa fa-envelope'></i>
+                        <p class="details-title"><strong>Email:</strong></p>
+                        <a href="#" class="email"> tendel42@gmail.com</a>
+
+                      </div>
+
+                      <div class="second-contact">
+                      <div class="contact-box">
+                        <i class='fa fa-map-marker'></i>
+                          <p class="details-title"><strong>Address:</strong> </p>
+                          <p class="sub-title"> Banepa,kavre</p>
+                      </div>
+
+                      <div class="contact-box">
+                          <i class='fa fa-phone'></i>
+                            <p class="details-title"><strong>Phone:</strong> </p>
+                            <p class="sub-title"> 01234643</p>
+                      </div>
+
+                    </div>
+
+                        <div class="contact-box">
+                            <i class='fa fa-map-marker'></i>
+                              <p class="details-title"><strong>Address:</strong> </p>
+                              <p class="sub-title">Kathmandu, Ramhiti</p>
+                          </div>
+
+                          <div class="contact-box">
+                              <i class='fa fa-phone'></i>
+                                <p class="details-title"><strong>Phone:</strong> </p>
+                                <p class="sub-title"> 01234643</p>
+                          </div>
+
+
+
+
+
+
+
+                </div>
+
+
+            </div>
+
+        </div>
+
+      </div>
+      <!--contact ended-->
+
+      <div class="google-map wow fadeInUp" data-wow-delay="0.1s">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3534.8940347417542!2d85.52059027479832!3d27.627798328996636!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39eb09c614ab615f%3A0x6af270ba59691ae8!2sTENDEL%20Hardware%20Pvt.Ltd!5e0!3m2!1sen!2snp!4v1683519619766!5m2!1sen!2snp" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+        </iframe>
+
+   </div>
+
+
+
+
+
+
+
+ {% endblock %}
