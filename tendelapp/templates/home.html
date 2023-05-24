@@ -1,4 +1,4 @@
-{% extends 'common.html' %} {% block title %} Lawcater {% endblock %}
+{% extends 'common.html' %} {% block title %} Tendel {% endblock %}
 {% block body %}
  {% load static %}
 
@@ -42,7 +42,7 @@
             <div class="container py-5 ">
                 <div class="row g-5 align-items-center about">
                     <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s">
-                        <h5 class="text-primary-gradient fw-medium">Welcome to Tendel Hardware! </h5>
+                        <h5 class="text-black fw-medium">Welcome to Tendel Hardware! </h5>
 						<p class="mb-4"> We are a leading supplier of building construction materials, tools, and equipment with multiple branches located in different areas. At Tendel Hardware, we are committed to providing our customers with high-quality products, exceptional customer service, and competitive prices.</p>
 
                         <p class="mb-4">At Tendel Hardware, we believe that exceptional customer service is the key to building long-lasting relationships with our customers. Our knowledgeable staff is always available to answer any questions you may have about our products or services. We can also provide expert advice on which products are best suited for your specific project, ensuring that you have the right tools and materials to get the job done. </p>
@@ -64,7 +64,7 @@
 			<div class="row content">
 
 				{% for branch in allbranch %}
-				<div class="col-lg-4 col-md-3 col-sm-6 my-2 mb-4 col">
+				<div class="col-lg-4 col-md-6 col-sm-12 my-2 mb-4 wow fadeInUp  "data-wow-delay="0.1s">
 					<div class="collapseable-card border p-0 ">
 						<div class="collapseable-card--top p-2 mb-0">
 							<div class="d-flex justify-content-between align-items-center w-100">
@@ -121,9 +121,9 @@
 															</div>
 
 															<div class="collapseable-card--bottom justify-content-end border null accordion-body" style="max-height: 0; overflow: hidden;">
-																<div class=""></div>
+																<div class="border-top"></div>
 																<div class="border-top border-line-top">
-																	<div class="d-flex flex-column pt-3 px-2 py-2">
+																	<div class="d-flex flex-column pt-3 px-2 py-2 col">
 																		<h6 class="text-black">Branch Manager Details</h6>
 																		<span class="text-title">
 																			<svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 1024 1024" class="mr-1 " height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">

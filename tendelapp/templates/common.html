@@ -3,7 +3,7 @@
 <html lang="en">
 
 <head>
-    <title>{% block title %}  {% endblock %}</title>
+    <title>{% block title %} Tendel Hardware {% endblock %}</title>
 	<!-- Required meta tags -->
 
 
@@ -76,7 +76,12 @@ button:hover {
   margin-top: 20px;
   /* background-color: #FD850B; */
   font-size: 15px;
-  transition: height 0.1s ease-in-out;
+  transform: rotateX(0deg);
+    transition: all .4s ease;
+
+}
+.accordion-body .text-title, .text-black{
+  transition: 1.3s ease !important;
 
 }
 .accordion-icon-container {
@@ -91,6 +96,7 @@ button:hover {
 }
 .text-title{
    color: #FD850B;
+   font-size: 14px;
 }
 
 .accordion-icon {
@@ -127,10 +133,10 @@ button:hover {
                     </div>
 
                     <div class="container-fluid d-flex justify-content-between top-second">
-                        <img src="{% static 'image/logo.jpg' %}">
+                        <a href="/"><img src="{% static 'image/logo.jpg' %}"></a>
                         <div class="social-media-icons">
 							<div class="social-media-icon facebook">
-							  <a href="#">
+							  <a href="https://www.facebook.com/tendel.banepa">
 								<i class="fab fa-facebook"></i>
 							  </a>
 							</div>
@@ -207,23 +213,23 @@ button:hover {
                 </div>
                 <div class="col-md-6 col-lg-3">
                     <h4 class="text-white mb-4">About Us</h4>
-                    <a class="btn btn-link" href="">Introduction</a>
-                    <a class="btn btn-link" href="">Mission, Vision and<span>Values</span> </a>
-                    <a class="btn btn-link" href="">Board of Directors</a>
+                    <a class="btn btn-link" href="/about">Introduction</a>
+                    <a class="btn btn-link" href="/about">Mission, Vision and<span>Values</span> </a>
+                    <a class="btn btn-link" href="/about">Board of Directors</a>
 
                 </div>
                 <div class="col-md-6 col-lg-3">
                     <h4 class="text-white mb-4">Our branch</h4>
-                    <a class="btn btn-link" href="">Banepa</a>
-                    <a class="btn btn-link" href="">PanchKhal</a>
-                    <a class="btn btn-link" href="">Kathmandu</a>
+                    <a class="btn btn-link" href="/branch">Banepa</a>
+                    <a class="btn btn-link" href="/branch">PanchKhal</a>
+                    <a class="btn btn-link" href="/branch">Kathmandu</a>
 
                 </div>
                 <div class="col-md-6 col-lg-3">
                     <h4 class="text-white mb-4">Important Link</h4>
-                    <a class="btn btn-link" href="">News and Notice</a>
-                    <a class="btn btn-link" href="">Gallery</a>
-                    <a class="btn btn-link" href="">Contact Us</a>
+                    <a class="btn btn-link" href="/news">News and Notice</a>
+                    <a class="btn btn-link" href="/gallery">Gallery</a>
+                    <a class="btn btn-link" href="/contact">Contact Us</a>
 
 
 
