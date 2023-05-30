@@ -9,13 +9,7 @@ from django.urls import  reverse
 from django.db.models import F
 
 
-class IpModel(models.Model):
-    ip = models.CharField(max_length=100)
-    # post = models.ForeignKey(Post, on_delete=models.CASCADE)
-    country = models.CharField(max_length=255,null=True)
 
-    def __str__(self):
-        return self.ip
 
 class Item(models.Model):
     item_id =models.AutoField(primary_key=True)
@@ -25,7 +19,7 @@ class Item(models.Model):
     brand= models.CharField(max_length=100,blank=True)
     publish=models.BooleanField()
 
-    views = models.ManyToManyField(IpModel, related_name = "post_views",blank=True)# add this field to track views
+
 
 
     class Meta:
