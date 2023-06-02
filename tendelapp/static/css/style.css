@@ -839,8 +839,11 @@ p.see:hover {
 .item .carousel-item img {
 
   height: 330px !important;
+  transition: .9s;
 
 }
+
+
 
 .col-prod{
   margin: 20px auto;

@@ -37,13 +37,13 @@ class HomeImage(models.Model):
 class Modal(models.Model):
     uploaded_time = models.DateTimeField(auto_now_add=True)
     expiration_time = models.DateTimeField(null=True)
-    title = models.CharField(max_length=100)
-    body = models.CharField(max_length=100)
-    image = models.ImageField(upload_to='notice/',default='default.jpg')
+    title = models.CharField(max_length=100, blank=True)
+    body = models.CharField(max_length=100, blank=True)
+    image = models.ImageField(upload_to='notice/', blank=True)
 
 
-
-
+    class Meta:
+        get_latest_by = 'uploaded_time'
 
 
 class Branch(models.Model):

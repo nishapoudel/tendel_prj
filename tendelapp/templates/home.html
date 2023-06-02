@@ -7,13 +7,20 @@
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title">Modal Title</h5>
+				{% if modal.title %}
+                <h5 class="modal-title"> {{modal.title}}</h5>
+				{% endif %}
                 <button type="button" id="closeButton" class="close" data-dismiss="modal">&times;</button>
             </div>
             <div class="modal-body">
+				{% if modal.body %}
                 <p>Modal content goes here. {{modal.body}}</p>
+				{% endif %}
+
+				{% if modal.image %}
 				<img src="/media/{{modal.image}}" class="img-fluid modal-home" alt="Image 1">
-				<p>. {{modal.body}}</p>
+				{% endif %}
+
 
             </div>
         </div>
@@ -57,6 +64,7 @@
         </a>
     </div>
 </section>
+
 <!-- about -->
 	<section class="about-section">
 		<p class="text-center branch-title">About Us</p>

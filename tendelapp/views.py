@@ -17,7 +17,7 @@ def home(request):
     allitem = Item.objects.all()[:6]
 
 
-    modal = Modal.objects.first()  # Retrieve the first instance of Modal, assuming you want the first one
+    modal = Modal.objects.latest('uploaded_time')  # Retrieve the first instance of Modal, assuming you want the first one
 
     if modal:
         expiration_time = modal.expiration_time.strftime('%Y-%m-%dT%H:%M:%S') + 'Z'
