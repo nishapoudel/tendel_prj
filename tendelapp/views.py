@@ -5,20 +5,41 @@ from .models import *
 from .forms import ItemCreate
 from django.shortcuts import render, redirect
 
+
+from django.utils import timezone
 # Create your views here.
 
 def home(request):
-    offer = Offer.objects.all()[:1]
+    allimg = HomeImage.objects.all()[:5]
     allbranch = Branch.objects.all()[:3]
     allnews = News.objects.all()[:3]
     allteam = Team.objects.all()[:3]
     allitem = Item.objects.all()[:6]
+
+
+    modal = Modal.objects.first()  # Retrieve the first instance of Modal, assuming you want the first one
+
+    if modal:
+        expiration_time = modal.expiration_time.strftime('%Y-%m-%dT%H:%M:%S') + 'Z'
+    else:
+        expiration_time = ''  # Provide a default value if no modal instance is found
+
+
+
+
+
+
+
     context = {
-        "offer": offer,
+        "allimg":allimg,
         "allbranch":allbranch,
         "allnews":allnews,
         "allteam":allteam,
         "allitem":allitem,
+
+       'modal': modal,
+       'expiration_time': expiration_time,
+        # "uploaded_time": uploaded_time,
     }
 
     return render(request,'home.html',context)

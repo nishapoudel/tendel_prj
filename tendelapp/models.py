@@ -5,7 +5,8 @@ from phonenumber_field.modelfields import PhoneNumberField
 from datetime import datetime, date
 from django.urls import  reverse
 
-
+from django.utils import timezone
+from datetime import timedelta
 from django.db.models import F
 
 
@@ -27,6 +28,22 @@ class Item(models.Model):
 
     def __str__(self):
         return self.title
+
+class HomeImage(models.Model):
+    image = models.ImageField(upload_to='carousel/',default='default.jpg')
+
+
+
+class Modal(models.Model):
+    uploaded_time = models.DateTimeField(auto_now_add=True)
+    expiration_time = models.DateTimeField(null=True)
+    title = models.CharField(max_length=100)
+    body = models.CharField(max_length=100)
+    image = models.ImageField(upload_to='notice/',default='default.jpg')
+
+
+
+
 
 
 class Branch(models.Model):
@@ -74,16 +91,6 @@ class Gallery(models.Model):
     class Meta:
         ordering=['-gallery_id']
 
-class Offer(models.Model):
-    offer_id =models.AutoField(primary_key=True)
-    discount = models.CharField(max_length=100)
-    validtime = models.CharField(max_length=100)
-
-
-
-
-    class Meta:
-        ordering=['-offer_id']
 
 
 class Team(models.Model):

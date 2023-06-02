@@ -476,7 +476,37 @@ header.header_area.topbar {
   }
 }
 
+/* carousel css */
+.carousel-item {
+  transition: transform 0.6s ease-in-out;
+}
 
+.carousel-item-next,
+.carousel-item-prev,
+.carousel-item.active {
+  display: block;
+}
+
+.carousel-item-next:not(.carousel-item-left),
+.carousel-item-prev:not(.carousel-item-right),
+.carousel-item.active:not(.carousel-item-right):not(.carousel-item-left) {
+  transform: translateX(0);
+}
+
+.carousel-item-next,
+.carousel-item.active:not(.carousel-item-right) {
+  transform: translateX(100%);
+}
+
+.carousel-item-prev,
+.carousel-item.active:not(.carousel-item-left) {
+  transform: translateX(-100%);
+}
+
+/* Disable transition delay between slides */
+.carousel-inner {
+  transition-delay: 0s;
+}
 
 
 
@@ -545,6 +575,32 @@ header.header_area.topbar {
   height: 230px;
 
 }
+.modal-pop{
+  position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 1050;
+
+    /* overflow: hidden; */
+    z-index: 1050;
+    overflow: auto;
+    outline: 0;
+    background: #000;
+    background: rgba(0,0,0,.75);
+}
+.modal-open{
+
+  /* background: #000;
+  background: rgba(0,0,0,.75); */
+
+}
+.modal-home{
+  height: 400px;
+  width: 100%;
+}
+
 .modal-con{
   padding: 2rem !important;
 }
