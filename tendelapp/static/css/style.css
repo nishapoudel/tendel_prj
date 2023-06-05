@@ -478,52 +478,30 @@ header.header_area.topbar {
 
 /* carousel css */
 .carousel-item {
-  transform: translateX(100%);
-  transition: transform 8s ease-in-out;
+  animation: slideInRight 2s ease-in-out forwards;
 }
 
-.carousel-item.active {
-  transform: translateX(0%);
+@keyframes slideInRight {
+  0% {
+      transform: translateX(100%);
+  }
+  100% {
+      transform: translateX(0%);
+  }
 }
 
 .carousel-item-next {
-  transform: translateX(-100%);
+  animation: slideOutLeft 2s ease-in-out forwards;
 }
 
-
-
-/* .carousel-item {
-  transition: transform 0.9s ease-in-out;
+@keyframes slideOutLeft {
+  0% {
+      transform: translateX(0%);
+  }
+  100% {
+      transform: translateX(-100%);
+  }
 }
-
-.carousel-item-next,
-.carousel-item-prev,
-.carousel-item.active {
-  display: block;
-}
-
-.carousel-item-next:not(.carousel-item-left),
-.carousel-item-prev:not(.carousel-item-right),
-.carousel-item.active:not(.carousel-item-right):not(.carousel-item-left) {
-  transform: translateX(0);
-}
-
-.carousel-item-next,
-.carousel-item.active:not(.carousel-item-right) {
-  transform: translateX(100%);
-}
-
-.carousel-item-prev,
-.carousel-item.active:not(.carousel-item-left) {
-  transform: translateX(-100%);
-} */
-
-/* Disable transition delay between slides */
-/* .carousel-inner {
-  transition-delay: 0s;
-} */
-
-
 
 /* css for news started */
 
