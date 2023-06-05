@@ -32,7 +32,7 @@
 
 <!-- carosoul -->
 <section>
-    <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel" data-interval="4000">
+    <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel" data-interval="8000">
         <ol class="carousel-indicators">
             <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
             <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
@@ -41,16 +41,12 @@
             <li data-target="#carouselExampleIndicators" data-slide-to="4"></li>
         </ol>
 
-        <div class="carousel-inner" id="id=slideset6">
+        <div class="carousel-inner">
             {% for allimg in allimg %}
             <div class="carousel-item {% if forloop.first %}active{% endif %}">
                 <img class="d-block w-100" src="/media/{{allimg.image}}" alt="Slide {{ forloop.counter }}">
             </div>
             {% endfor %}
-        </div>
-
-        <div class="carousel-caption d-none d-md-block">
-            <!-- Add your caption content here -->
         </div>
 
         <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
@@ -384,6 +380,28 @@ window.addEventListener('DOMContentLoaded', (event) => {
 
 
 	</script>
+<script>
+   $(document).ready(function () {
+        $('.carousel').carousel('cycle');
+    });
+
+    $('.carousel').on('slide.bs.carousel', function (e) {
+        var $nextSlide = $(e.relatedTarget);
+        $nextSlide.addClass('carousel-item-next');
+        setTimeout(function() {
+            $nextSlide.removeClass('carousel-item-next');
+        }, 8000);
+    });
+
+
+</script>
+
+
+
+
+
+
+
 
 
 
