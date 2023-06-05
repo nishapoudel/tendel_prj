@@ -477,6 +477,24 @@ header.header_area.topbar {
 }
 
 /* carousel css */
+#slideset6{
+  position: relative;
+}
+#slideset6 > * {animation: 12s autoplay6 infinite linear;
+  position: absolute; top: 0; left: 0; opacity: 0.0}
+
+  @keyframes autoplay6 {
+    0% {opacity: 0.0}
+    4% {opacity: 1.0}
+    33.33% {opacity: 1.0}
+    37.33% {opacity: 0.0}
+    100% {opacity: 0.0}
+  }
+
+  #slideset6 > *:nth-child(1) {animation-delay: 0s}
+#slideset6 > *:nth-child(2) {animation-delay: 4s}
+#slideset6 > *:nth-child(3) {animation-delay: 8s}
+/*
 .carousel-item {
   transition: transform 0.9s ease-in-out;
 }
@@ -501,12 +519,12 @@ header.header_area.topbar {
 .carousel-item-prev,
 .carousel-item.active:not(.carousel-item-left) {
   transform: translateX(-100%);
-}
+} */
 
 /* Disable transition delay between slides */
-.carousel-inner {
+/* .carousel-inner {
   transition-delay: 0s;
-}
+} */
 
 
 
