@@ -31,7 +31,7 @@
 
 
 <!-- carosoul -->
-<section>
+<section class="carosoul-home">
     <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel" data-interval="12000">
         <ol class="carousel-indicators">
             <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
@@ -63,11 +63,11 @@
 
 <!-- about -->
 	<section class="about-section">
-		<p class="text-center branch-title">About Us</p>
+		<p class="text-center branch-title wow fadeInUp" data-wow-delay="0.5s">About Us</p>
 	 <div class="container-xxl " id="about">
             <div class="container py-5 ">
                 <div class="row g-5 align-items-center about">
-                    <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s">
+                    <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.5s">
                         <h5 class="text-black fw-medium">Welcome to Tendel Hardware! </h5>
 						<p class="mb-4"> We are a leading supplier of building construction materials, tools, and equipment with multiple branches located in different areas. At Tendel Hardware, we are committed to providing our customers with high-quality products, exceptional customer service, and competitive prices.</p>
 
@@ -84,21 +84,24 @@
 
 	<!-- our branch -->
 	<section class="branch">
-		<p class="text-center branch-title">Our Branches</p>
+		<p class="text-center branch-title wow fadeInUp" data-wow-delay="0.5s">Our Branches</p>
 
 		  <div class="container">
 			<div class="row content">
 
 				{% for branch in allbranch %}
-				<div class="col-lg-4 col-md-6 col-sm-12 my-2 mb-4 wow fadeInUp  "data-wow-delay="0.1s">
+				<div class="col-lg-4 col-md-6 col-sm-12 my-2 mb-4 wow fadeInUp" data-wow-delay="0.5s">
 					<div class="collapseable-card border p-0 ">
 						<div class="collapseable-card--top p-2 mb-0">
 							<div class="d-flex justify-content-between align-items-center w-100">
 								<div class="w-100">
 									<div class="d-flex justify-content-between align-items-center w-100 mb-1 border-bottom pb-2 mb-2" >
 										<h5 class="font-weight-bold mb-0  text-danger">{{ branch.main_address }}</h5>
+
+										<a href="javascript:void(0)"  onclick="showMap('{{ branch.map_link }}')" >
 										<div role="button" class="text-danger" data-toggle="tooltip" data-placement="center" title="Locate on map" onclick="showMapView()" id="mapViewLink">
-											<h4 class="mb-0">
+
+													<h4 class="mb-0">
 											<svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 512 512" height="1em" width="1em"
 											xmlns="http://www.w3.org/2000/svg">
 											<path d="M256 176c-44.004 0-80.001 36-80.001 80 0 44.004 35.997 80 80.001 80 44.005 0 79.999-35.996 79.999-80 0-44-35.994-80-79.999-80zm190.938 58.667c-9.605-88.531-81.074-160-169.605-169.599V32h-42.666v33.067c-88.531 9.599-160 81.068-169.604 169.599H32v42.667h33.062c9.604 88.531 81.072 160 169.604 169.604V480h42.666v-33.062c88.531-9.604 160-81.073 169.605-169.604H480v-42.667h-33.062zM256 405.333c-82.137 0-149.334-67.198-149.334-149.333 0-82.136 67.197-149.333 149.334-149.333 82.135 0 149.332 67.198 149.332 149.333S338.135 405.333 256 405.333z">
@@ -106,7 +109,10 @@
 											</path>
 											</svg>
 											</h4>
+
 										</div>
+										</a>
+
 
 									</div>
 									<span class="text-title d-flex align-items-baseline branch-item ">
@@ -147,9 +153,10 @@
 															</div>
 
 															<div class="collapseable-card--bottom justify-content-end border null accordion-body" style="max-height: 0; overflow: hidden;">
-																<div class="border-top"></div>
+																<div class=""></div>
 																<div class="border-top border-line-top">
-																	<div class="d-flex flex-column pt-3 px-2 py-2 col">
+																	<div class="d-flex flex-column pt-3 px-2 py-2 ">
+																		<!-- <hr> -->
 																		<h6 class="text-black">Branch Manager Details</h6>
 																		<span class="text-title">
 																			<svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 1024 1024" class="mr-1 " height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
@@ -267,16 +274,16 @@
 
 <div class="container-xxl py-2" id="feature">
 		<div class="container py-2 px-lg-5">
-			<div class="text-center wow fadeInUp" data-wow-delay="0.1s">
+			<div class="text-center wow fadeInUp" data-wow-delay="0.5s">
 
-				<h5 class="mb-5  fw-medium branch-title">Our Items</h1>
+				<h1 class="mb-5  fw-medium branch-title wow fadeInUp" data-wow-delay="0.5s">Our Items</h1>
 					<a class="see" href ="/item">See All > </a>
 
 
 			</div>
 			<div class="row g-4">
 				{% for i in allitem %}
-				<div class="col-lg-4 col-md-6 wow fadeInUp col-prod" data-wow-delay="0.1s">
+				<div class="col-lg-4 col-md-6 wow fadeInUp col-prod" data-wow-delay="0.5s">
 					<div class="feature-item bg-light rounded p-4">
 						<div class="image-container">
 							<img src=" {% static 'image/tendel-1.jpg' %}" alt="Image 1">
@@ -297,9 +304,9 @@
 	<!-- Features End -->
 
 <div class="contact-container">
-	<h5 class="titles wow fadeInUp" data-wow-delay="0.1s">Get in Touch</h2>
-	<div class="contact-info wow fadeInUp" data-wow-delay="0.1s">
-		<form class="forms" >
+	<h1 class="titles wow fadeInUp" data-wow-delay="0.5s">Get in Touch</h1>
+	<div class="contact-info wow fadeInUp" data-wow-delay="0.5s">
+		<form class="forms wow fadeInUp" data-wow-delay="0.5s">
 			<h6>Write Us</h6>
 			<input type="text" name="fullname" id="fullname" placeholder="Full Name" required>
 			<input type="email" name="email" id="email" placeholder="Email" required>
@@ -307,7 +314,7 @@
 			<textarea name="msg" id="msg" cols="30" rows="10" placeholder="Your Message Here..."></textarea>
 			<button type="submit">Send</button>
 		</form>
-		<div class="details">
+		<div class="details wow fadeInUp" data-wow-delay="0.5s">
 			<h5>Contact Us</h5>
 			<div class="contact-items-wrapper">
 				<div class="contact-items">
@@ -381,17 +388,7 @@ window.addEventListener('DOMContentLoaded', (event) => {
 
 	</script>
 <script>
-//    $(document).ready(function () {
-//         $('.carousel').carousel('cycle');
-//     });
 
-//     $('.carousel').on('slide.bs.carousel', function (e) {
-//         var $nextSlide = $(e.relatedTarget);
-//         $nextSlide.addClass('carousel-item-next');
-//         setTimeout(function() {
-//             $nextSlide.removeClass('carousel-item-next');
-//         }, 12000);
-//     });
 
 $(document).ready(function () {
         $('.carousel').carousel('cycle');

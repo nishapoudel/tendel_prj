@@ -24,13 +24,13 @@
 
 	<div class="container-xxl py-2" id="feature">
 		<div class="container py-2 px-lg-5">
-			<div class="text-center wow fadeInUp" data-wow-delay="0.1s">
+			<div class="text-center wow fadeInUp" data-wow-delay="0.5s">
 
-				<h5 class="mb-5  fw-medium branch-title">Our Gallery</h1>
+				<h1 class="mb-5  fw-medium branch-title">Our Gallery</h1>
 			</div>
 			<div class="row g-4">
                 {% for i in allitem %}
-				<div class="col-lg-4 col-md-6 wow fadeInUp col-prod" data-wow-delay="0.1s" data-toggle="modal" data-target="#item-modal-{{ i.gallery_id }}">
+				<div class="col-lg-4 col-md-6 wow fadeInUp col-prod" data-wow-delay="0.5s" data-toggle="modal" data-target="#item-modal-{{ i.gallery_id }}">
 					<div class="feature-item bg-light rounded p-4">
 						<div class="image-container">
 							<img src="/media/{{i.image}}" alt="Image 1">

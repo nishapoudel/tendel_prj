@@ -12,7 +12,25 @@ html {
     scroll-behavior: smooth;
   }
   /* Smooth scrolling animation */
+  .breadcrumb {
 
+    background-color: transparent !important;
+
+}
+.breadcrumb-item a{
+  font-family: "Heebo",sans-serif !important;
+    font-size: 1rem;
+    font-weight: 600;
+    line-height: 1.5;
+
+
+    -webkit-text-size-adjust: 100%;
+    -webkit-tap-highlight-color: rgba(0,0,0,0);
+}
+.breadcrumb-item + .breadcrumb-item::before {
+   content: "/";
+  color: #fff !important;
+}
 .top-bar{
     background-color: #f0f0f0;
     line-height: 18px;
@@ -280,7 +298,7 @@ header.header_area.topbar {
 
 /* about */
 .about-section{
-  margin-top: 7rem;
+  margin-top: 5rem;
 }
 
 .img-about {
@@ -369,7 +387,7 @@ header.header_area.topbar {
     color:#FD850B;
     font-family: "Lucida Console", "Courier New", monospace;
     font-size: 20px;
-    margin-top: 2.5rem;
+    margin-top: 3.5rem;
 }
 .branch-link{
   margin: 10px;
@@ -477,7 +495,7 @@ header.header_area.topbar {
 }
 
 /* carousel css */
-.carousel-item {
+.carosoul-home .carousel-item {
   animation: slideInRight 2s ease-in-out forwards;
 }
 
@@ -490,7 +508,7 @@ header.header_area.topbar {
   }
 }
 
-.carousel-item-next {
+.carosoul-home .carousel-item-next {
   animation: slideOutLeft 2s ease-in-out forwards;
 }
 
@@ -608,7 +626,7 @@ header.header_area.topbar {
 
 
 .news-rows {
-  margin-top: 1rem;
+  margin-top: 2rem;
 }
 .news-box {
   display: flex;
@@ -913,21 +931,32 @@ p.see:hover {
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin: 2rem auto;
+  margin: 2.5rem auto;
   width: 86vw;
 }
 
-.contact-container h5 {
+
+
+.contact-container h3 {
   color: #FD850B;
     font-family: "Lucida Console", "Courier New", monospace;
     font-size: 20px;
     margin-top: 2rem;
-    margin-bottom: 2rem;
-}
 
+}
+.intro-section  {
+  font-size: 60px;
+  font-weight: 900;
+  line-height: 1;
+  color: #fff;
+  margin-top: -10rem;
+
+  font-family: "Nunito",sans-serif;
+}
 .contact-info {
   display: flex;
   width: 98%;
+  margin-top: 1.3rem;
 }
 
 .contact-info form {
@@ -942,6 +971,7 @@ p.see:hover {
 }
 .forms h6 {
   padding: 20px;
+  margin-top: 1rem;
 }
 
 .contact-container .details {
@@ -989,6 +1019,7 @@ p.see:hover {
 .details h5 {
   text-align: center;
   padding-top: 5px;
+  margin-top: 2rem;
 }
 
 .details p {
@@ -1304,7 +1335,7 @@ textarea:focus {
 
 .google-map iframe {
   height: 100%;
-  width: 96%;
+  width: 100%;
   left: 0;
   top: 0;
   /* position: absolute; */
