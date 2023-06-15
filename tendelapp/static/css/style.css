@@ -1,7 +1,8 @@
 *{
     margin: 0;
     padding: 0;
-    font-family: "Lucida Console", "Courier New", monospace;
+    /* font-family: "Lucida Console", "Courier New", monospace; */
+    font-family: "Heebo",sans-serif;
 
 }
 a:hover{
@@ -307,6 +308,20 @@ header.header_area.topbar {
     width: 100% !important;
     height: 500px !important;
     object-fit: cover;
+    filter: opacity(0.8) drop-shadow(0 0  black);
+
+
+}
+.readmore{
+  background-color: #FD850B;
+  outline: none;
+  border-color: #FD850B;
+  color: #fff;
+}
+.title-hardware{
+  font-size: calc(1.525rem + 3.3vw);
+  line-height: 1.2;
+  font-weight: 900;
 }
 
 /* nav responsive for mobile */
@@ -538,8 +553,9 @@ header.header_area.topbar {
   }
 }
 
+
 /* carousel css */
-.carosoul-home .carousel-item {
+/* .carosoul-home .carousel-item {
   animation: slideInRight 2s ease-in-out forwards;
 }
 
@@ -563,7 +579,7 @@ header.header_area.topbar {
   100% {
       transform: translateX(-100%);
   }
-}
+} */
 
 /* css for news started */
 
@@ -895,6 +911,7 @@ p.see:hover {
 
   height: 330px !important;
   transition: .9s;
+
 
 }
 

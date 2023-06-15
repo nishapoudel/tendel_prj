@@ -31,7 +31,7 @@
 
 
 <!-- carosoul -->
-<section class="carosoul-home">
+<section class="carosoul-home" >
     <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel" data-interval="12000">
         <ol class="carousel-indicators">
             <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
@@ -41,12 +41,26 @@
             <li data-target="#carouselExampleIndicators" data-slide-to="4"></li>
         </ol>
 
-        <div class="carousel-inner">
+        <div class="carousel-inner" >
             {% for allimg in allimg %}
             <div class="carousel-item {% if forloop.first %}active{% endif %}">
                 <img class="d-block w-100" src="/media/{{allimg.image}}" alt="Slide {{ forloop.counter }}">
             </div>
-            {% endfor %}
+			           {% endfor %}
+					   <div class="carousel-caption d-none d-md-block " >
+						<div class="container">
+							<div class="row justify-content-start">
+								<div class="col-sm-10 col-lg-8">
+
+									<h3 class="title-hardware text-white animated slideInDown" data-wow-delay="0.3s">Best Hardware Shop</h3>
+									<p class="fs-5 text-white mb-4 pb-2 zoomIn" data-wow-delay="0.3s">We are a leading supplier of building construction materials, tools, and equipment with multiple branches located in different areas.</p>
+									<a href="/about" class="btn  py-md-3 px-md-5 me-3 animated slideInLeft readmore" data-wow-delay="0.5s">Read More</a>
+									<a href="/contact" class="btn btn-light py-md-3 px-md-5 animated slideInRight" data-wow-delay="0.7s" style="margin-left: 1rem;">Call to Order</a>
+								</div>
+							</div>
+						</div>
+
+					  </div>
         </div>
 
         <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">

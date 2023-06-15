@@ -4,19 +4,27 @@
 
 <!-- carosoul -->
 <section  class="item">
-    <div id="carouselExampleIndicators" class="carousel slide item-bg" data-ride="carousel">
+  <div id="carouselExampleIndicators" class="carousel slide item-bg" data-ride="carousel">
 
-        <div class="carousel-inner">
-          <div class="carousel-item active">
-            <img class="d-block w-100" src=" {% static 'image/shop-2.jpg' %}"  alt="First slide">
-          </div>
-
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <img class="d-block w-100" src=" {% static 'image/shop-2.jpg' %}"  alt="First slide">
         </div>
-        <div class="carousel-caption d-none d-md-block">
-
-          </div>
 
       </div>
+      <div class="carousel-caption d-none d-md-block">
+        <h1 class="intro-section animated slideInDown" data-wow-delay="0.5s">Our Gallery</h1>
+        <nav aria-label="breadcrumb">
+          <ol class="breadcrumb justify-content-center">
+              <li class="breadcrumb-item"><a class="text-white" href="/">Home</a></li>
+
+              <li class="breadcrumb-item text-white active" aria-current="page">gallery</li>
+          </ol>
+      </nav>
+        </div>
+
+
+    </div>
 </section>
 
 
@@ -30,7 +38,7 @@
 			</div>
 			<div class="row g-4">
                 {% for i in allitem %}
-				<div class="col-lg-4 col-md-6 wow fadeInUp col-prod" data-wow-delay="0.5s" data-toggle="modal" data-target="#item-modal-{{ i.gallery_id }}">
+				<div class="col-lg-4 col-md-6 wow zoomIn col-prod" data-wow-delay="0.5s" data-toggle="modal" data-target="#item-modal-{{ i.gallery_id }}">
 					<div class="feature-item bg-light rounded p-4">
 						<div class="image-container">
 							<img src="/media/{{i.image}}" alt="Image 1">
