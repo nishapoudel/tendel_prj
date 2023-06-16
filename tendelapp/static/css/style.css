@@ -1,8 +1,14 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans');
+
+.opensans {
+  font-family: "Open Sans", sans-serif;
+}
 *{
     margin: 0;
     padding: 0;
     /* font-family: "Lucida Console", "Courier New", monospace; */
-    font-family: "Heebo",sans-serif;
+    /* font-family: "Heebo",sans-serif; */
+    font-family: "Open Sans", sans-serif;
 
 }
 a:hover{
@@ -37,6 +43,7 @@ html {
 }
 .breadcrumb-item a{
   font-family: "Heebo",sans-serif !important;
+
     font-size: 1rem;
     font-weight: 600;
     line-height: 1.5;
@@ -80,9 +87,11 @@ color: #fff!important;
     background-color: #f0f0f0;
     line-height: 18px;
     font-size: 16px;
-    font-family: Arial, Helvetica, sans-serif;
+    /* font-family: Arial, Helvetica, sans-serif; */
     /* font-family: "Raleway", sans-serif; */
-    font-family: "Lucida Console", "Courier New", monospace;
+    /* font-family: "Lucida Console", "Courier New", monospace; */
+    font-family: "Open Sans", sans-serif;
+
     font-weight: 400;
     height: 2.2rem;
 
@@ -399,7 +408,8 @@ header.header_area.topbar {
 }
 
 .about p {
-  font-family: "Heebo",sans-serif;
+  /* font-family: "Heebo",sans-serif; */
+  font-family: "Open Sans", sans-serif;
   font-size: 1rem;
   font-weight: 400;
   line-height: 1.5;
@@ -428,7 +438,8 @@ header.header_area.topbar {
   margin-top: 5rem;
 }
 .our-mission p{
-  font-family: "Heebo",sans-serif;
+  /* font-family: "Heebo",sans-serif; */
+  font-family: "Open Sans", sans-serif;
   font-size: 14px;
   font-weight: 400;
   line-height: 1.5;
@@ -474,7 +485,8 @@ header.header_area.topbar {
 }
 .branch-title{
     color:#FD850B;
-    font-family: "Lucida Console", "Courier New", monospace;
+    /* font-family: "Lucida Console", "Courier New", monospace; */
+    font-family: "Open Sans", sans-serif;
     font-size: 20px;
     margin-top: 3.5rem;
 }
@@ -484,7 +496,7 @@ header.header_area.topbar {
 }
 
 .branch-link{
-  font-family: "Lucida Console", "Courier New", monospace;
+  font-family: "Open Sans", sans-serif;
   font-size: 18px;
   margin-top: 2rem ;
   color:#404040;
@@ -493,7 +505,7 @@ header.header_area.topbar {
 
 .active-link {
   color:#FD850B;
-    font-family: "Lucida Console", "Courier New", monospace;
+  font-family: "Open Sans", sans-serif;
     font-size: 18px;
     margin-top: 2rem ;
     margin-right: 1rem;
@@ -652,7 +664,7 @@ header.header_area.topbar {
 }
 .title-news {
   color: #FD850B;
-  font-family: "Lucida Console", "Courier New", monospace;
+  font-family: "Open Sans", sans-serif;
   font-size: 20px;
  padding-top: 2rem;
 
@@ -939,7 +951,7 @@ p.see:hover {
 }
 .item .carousel-item img {
 
-  height: 330px !important;
+  height: 355px !important;
   transition: .9s;
 
 
@@ -1030,7 +1042,7 @@ p.see:hover {
 
 .contact-container h3 {
   color: #FD850B;
-    font-family: "Lucida Console", "Courier New", monospace;
+  font-family: "Open Sans", sans-serif;
     font-size: 20px;
     margin-top: 2rem;
 
@@ -1042,7 +1054,7 @@ p.see:hover {
   color: #fff;
   margin-top: -10rem;
 
-  font-family: "Nunito",sans-serif;
+  font-family: "Open Sans", sans-serif;
 }
 .contact-info {
   display: flex;
@@ -1117,7 +1129,7 @@ p.see:hover {
   font-size: 12px;
   margin-left: 15px;
 color: #757575;
-  font-family: "Lucida Console", "Courier New", monospace;
+font-family: "Open Sans", sans-serif;
 }
 .details-title {
   width: 43px;
@@ -1132,7 +1144,7 @@ a.emai{
   font-size: 12px;
   margin-left: 15px;
   color: #757575;
-  font-family: "Lucida Console", "Courier New", monospace;
+  font-family: "Open Sans", sans-serif;
   padding-left: 14px;
 }
 
@@ -1140,7 +1152,7 @@ a.emai{
 .details p a {
   color: black;
   text-decoration: none;
-  font-family: "Lucida Console", "Courier New", monospace;
+  font-family: "Open Sans", sans-serif;
   font-size: 14px;
   color: #757575;
 }
@@ -1156,7 +1168,7 @@ a.email{
   font-size: 12px;
   margin-left: 15px;
   color: #757575;
-  font-family: "Lucida Console", "Courier New", monospace;
+  font-family: "Open Sans", sans-serif;
   padding-left: 14px;
 }
 
@@ -1256,7 +1268,7 @@ textarea:focus {
   background-color: #4294E3;
 }
 .footer h4{
-  font-family: "Jost",sans-serif !important;
+  font-family: "Open Sans", sans-serif;
 }
 
 .footer .btn.btn-social {
@@ -1313,7 +1325,7 @@ textarea:focus {
 .footer .btn.btn-link::before {
   position: relative;
   content: "\f105";
-  font-family: "Font Awesome 5 Free";
+  font-family: "Open Sans", sans-serif;
   font-weight: 900;
   margin-right: 10px;
 }
@@ -1354,7 +1366,7 @@ textarea:focus {
 /* Container holding the image and the text */
 .container {
   position: relative;
-  font-family: Arial;
+  font-family: "Open Sans", sans-serif;
 }
 
 .text-block {
@@ -1491,7 +1503,7 @@ i.fas.fa-map-marker-alt.color-red {
 /* Container holding the image and the text */
 .container {
   position: relative;
-  font-family: Arial;
+  font-family: "Open Sans", sans-serif;
 }
 .offer h4{
   font-size: 4rem;
