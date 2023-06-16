@@ -97,7 +97,7 @@ color: #fff!important;
 }
 .top-second{
     margin-top: 0.8rem;
-    margin-left: 3rem;
+    /* margin-left: 3rem; */
 }
 .top-second img{
     width: 150px;
@@ -114,10 +114,13 @@ color: #fff!important;
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 30px;
-    height: 30px;
+    /* width: 30px;
+    height: 30px; */
+    width: 20px;
+    height: 20px;
     border-radius: 50%;
     margin: 10px;
+    margin: 0 10px;
   }
 
   .social-media-icon {
@@ -141,7 +144,12 @@ color: #fff!important;
     font-weight: 500;
   }
   .nav-blue{
-    background-color: #445E95;
+    background-color: #6883BC;
+  }
+
+  .nav-blue img{
+    width: 120px;
+    height: 35px;
   }
 
   .nav-item .nav-link {
@@ -155,7 +163,7 @@ color: #fff!important;
   color: #f0f0f0 !important ;
 }
 .nav-ul{
-    width: 89%;
+    width: 96%;
     margin: 0 auto;
 }
 /* .topnav .icon {
@@ -164,9 +172,10 @@ color: #fff!important;
 
 .nav-blue .icon{
   float: right;
+  color: #fff;
 }
 header.header_area.topbar {
-    height: 130px;
+    height: 106px;
 }
 @media (max-width: 991px) {
   .topnav:not(.responsive) .nav-item {
@@ -189,8 +198,12 @@ header.header_area.topbar {
   width: 100%;
 }
 li.nav-item {
+  /* width: 90px;
+  padding: 0px 1px; */
   width: 90px;
-  padding: 0px 1px;
+    padding: 10px 1px;
+    font-size: 15px;
+    font-weight: 700;
 }
 #nav-item-news{
   width: 130px;
@@ -205,6 +218,7 @@ li.nav-item {
     background: #FFFFFF;
     color: #000000!important;
     padding: 15px;
+    margin-top: 0;
 }
 .sticky-top .nav-item.nav-link {
   font: 14px "Raleway", sans-serif;
@@ -230,6 +244,7 @@ li.nav-item {
 @media only screen and (min-width : 768px) {
   .nav-blue{
     z-index: 999;
+    margin-top: 1.2rem;
   }
   .navbar-light .navbar-nav .nav-link {
 
@@ -268,6 +283,9 @@ li.nav-item {
 header.header_area.topbar {
   height: 68px;
 }
+.top-bar {
+  height: 3rem;
+}
 .navbar-light .navbar-nav .nav-link {
 
   padding-top: 1rem;
@@ -276,6 +294,18 @@ header.header_area.topbar {
 .nav-blue{
   z-index: 999;
 }
+.nav-blue img {
+  width: 110px;
+  height: 37px;
+  margin-top: -1rem;
+}
+.nav-blue .icon {
+  color:#fff;
+}
+
+}
+.centre-item{
+  font-size: 12px;
 }
 .contact-us {
 
@@ -306,7 +336,7 @@ header.header_area.topbar {
 /* carosaol */
 .carousel-item img {
     width: 100% !important;
-    height: 500px !important;
+    height: 450px !important;
     object-fit: cover;
     filter: opacity(0.8) drop-shadow(0 0  black);
 
