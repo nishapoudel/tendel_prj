@@ -1,25 +1,26 @@
-// const arrowIcon = document.getElementById('arrow-icon');
-// const additionalInfo = document.getElementById('additional-info');
+//add color when nav-link is clicked
+$(document).ready(function () {
+    var activeNavItem = localStorage.getItem('activeNavItem');
 
-// arrowIcon.addEventListener('click', () => {
-//   additionalInfo.classList.toggle('hidden');
-//   arrowIcon.classList.toggle('active');
-// });
+   // If there is an active state, set it on the nav-item
+   if (activeNavItem) {
+     $('.navbar-light .navbar-nav .nav-link').removeClass('active');
+     $('#' + activeNavItem).addClass('active');
+   }
 
-// arrowIcon.addEventListener('keydown', (event) => {
-//   if (event.key === 'Enter' || event.key === ' ') {
-//     additionalInfo.classList.toggle('hidden');
-//     arrowIcon.classList.toggle('active');
-//   }
-// });
+   // Add a click event listener to the nav-items
+   $('.navbar-light .navbar-nav .nav-link').click(function() {
 
-// document.addEventListener('click', (event) => {
-//   const isClickInside = arrowIcon.contains(event.target) || additionalInfo.contains(event.target);
-//   if (!isClickInside) {
-//     additionalInfo.classList.add('hidden');
-//     arrowIcon.classList.remove('active');
-//   }
-// });
+     $('navbar-light .navbar-nav .nav-link').removeClass('active');
+
+     $(this).addClass('active');
+
+
+     localStorage.setItem('activeNavItem', $(this).attr('id'));
+   });
+});
+
+
 (function ($) {
   "use strict";
 

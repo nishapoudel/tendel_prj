@@ -3,14 +3,17 @@
 <html lang="en">
 
 <head>
-    <title>{% block title %} Tendel Hardware {% endblock %}</title>
-	<!-- Required meta tags -->
+
+      <title>{% block title %} Tendel Hardware Banepa - Hardware Store{% endblock %} </title>
+
 
 
    <!-- Required meta tags -->
-
+   <meta name="description" content="Tendel Hardware Banepa offers a wide range of high-quality hardware supplies in Banepa, Ramhiti Kathmandu, Kavre. Visit  for all your hardware needs.">
+    <link rel="icon" href="{% static 'image/logo-removebg.png' %}" type="image/png">
    <meta charset="utf-8">
    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
 
    <!-- Bootstrap CSS -->
 <!-- Bootstrap CSS -->
@@ -49,7 +52,7 @@
 
       <!-- Customized Bootstrap Stylesheet -->
       <link href="css/bootstrap.min.css" rel="stylesheet">
-   <!-- <title>Tendel Hardware!</title> -->
+
    <style>
        button {
   background-color: #0077cc;
@@ -122,28 +125,21 @@ button:hover {
 </head>
 
 <body>
-    <!-- Spinner Start -->
-    <!-- <div id="spinner" class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
-      <div class="spinner-border text-primary" style="width: 3rem; height: 3rem;" role="status">
-          <span class="sr-only">Loading...</span>
-      </div>
-  </div> -->
-  <!-- Spinner End -->
 
-	<!--================ Start Header Menu Area =================-->
 	 <!--================ Start Header Menu Area =================-->
      <header class="header_area topbar">
 		<div class="main_menu">
             <div class="top-bar ">
-                <nav class="navbar  top-nav ">
+                <nav class="navbar  top-nav blue">
                     <div class="container-fluid d-flex justify-content-between">
                       <!-- <a class="navbar-brand">Tendel Hardware Pvt.ltd</a> -->
                       <div class="contact-us">
-                        <Span ><i class="fa fa-phone"></i> Call us : 015687434</Span>
+
+                        <Span ><a class="contact-topbar" href="tel:011660061"><i class="fa fa-phone"></i> Call us : 011660061</a></Span>
                        </div>
 
                        <div class="centre-item">
-                        <marquee>Tendel Hardware Pvt.Ltd</marquee>
+                        <marquee>Tendel Hardware Pvt.Ltd - 011660184</marquee>
                      </div>
                       <div class="social-media-icons">
                         <div class="social-media-icon facebook">
@@ -157,11 +153,7 @@ button:hover {
                           </a>
 
                         </div>
-                        <div class="social-media-icon instagram">
-                        <a href="#">
-                          <i class="fab fa-youtube"></i>
-                          </a>
-                        </div>
+
                         <div class="social-media-icon instagram">
                           <a href="#">
                             <i class="fab fa-tiktok fa-1x"></i>
@@ -173,52 +165,27 @@ button:hover {
                     </div>
                   </nav>
 
-                 <!-- <div class="container-fluid d-flex justify-content-between top-second">
-                  <a href="/"><img src="{% static 'image/logo.jpg' %}"></a>
-                        <div class="social-media-icons">
-                            <div class="social-media-icon facebook">
-                              <a href="https://www.facebook.com/tendel.banepa">
-                              <i class="fab fa-facebook"></i>
-                              </a>
-                            </div>
-                            <div class="social-media-icon instagram">
-                              <a href="#">
-                              <i class="fab fa-instagram"></i>
-                              </a>
-
-                            </div>
-                            <div class="social-media-icon instagram">
-                            <a href="#">
-                              <i class="fab fa-youtube"></i>
-                              </a>
-                            </div>
-                            <div class="social-media-icon instagram">
-                              <a href="#">
-                                <i class="fab fa-tiktok fa-1x"></i>
-                                </a>
-                              </div>
-
-						           </div>
-                    </div> -->
 
 
 
 
-                  <nav class="navbar navbar-expand-lg navbar-light nav-blue">
+                  <nav class="navbar navbar-expand-lg navbar-light nav-blue ">
                     <div class="topnav" id="myTopnav">
                        <a href="javascript:void(0);" class="icon" onclick="toggleNav()">
                             <i class="fa fa-bars"></i>
                           </a>
+                          <!-- <a href="/"><img src="{% static 'image/logo-removebg.png' %}"></a> -->
                       <ul class="navbar-nav d-flex justify-content-between nav-ul">
                         <a href="/"><img src="{% static 'image/logo-removebg.png' %}"></a>
-                        <li class="nav-item"><a class="nav-link" id="nav-item" href="/">Home</a></li>
-                        <li class="nav-item"><a class="nav-link" id="nav-item" href="/about">About Us</a></li>
-                        <li class="nav-item"><a class="nav-link" id="nav-item-team" href="/team">Our Team</a></li>
-                        <li class="nav-item"><a class="nav-link" id="nav-item-branch" href="/branch">Our Branch</a></li>
+                        <li class="nav-item home"><a class="nav-link" id="nav-item" href="/">Home</a></li>
+                        <li class="nav-item"><a class="nav-link" id="nav-item-about" href="/about">About </a></li>
+
+                        <li class="nav-item"><a class="nav-link" id="nav-item-team" href="/team"> Team</a></li>
+                        <li class="nav-item"><a class="nav-link" id="nav-item-branch" href="/branch"> Branch</a></li>
                         <li class="nav-item"><a class="nav-link" id="nav-item-prod" href="/item">Products</a></li>
                         <li class="nav-item"><a class="nav-link" id="nav-item-news" href="/news">News and Notice</a></li>
                         <li class="nav-item"><a class="nav-link" id="nav-item-gallery" href="/gallery">Gallery</a></li>
-                        <li class="nav-item"><a class="nav-link" id="nav-item-contact" href="/contact">Contact US</a></li>
+                        <li class="nav-item"><a class="nav-link" id="nav-item-contact" href="/contact">Contact</a></li>
 
 
 
@@ -243,36 +210,40 @@ button:hover {
 	<!--================  start footer Area =================-->
 	  <!-- Footer Start -->
       <div class="container-fluid  text-light footer wow fadeIn" data-wow-delay="0.3s">
-        <div class="container py-5 px-lg-5">
-            <div class="row g-5">
+        <div class="container ">
+            <div class="row ">
                 <div class="col-md-6 col-lg-3">
                     <img src=" {% static 'image/logo-removebg.png' %} ">
                     <p><i class="fa fa-map-marker-alt me-3"></i>Banepa</p>
                     <p><i class="fa fa-phone-alt me-3"></i>9867543245</p>
-                    <p><i class="fa fa-envelope me-3"></i>tendel@gmail.com</p>
+                    <p class="mail-footer"><i class="fa fa-envelope me-3 mail"></i>tendelhardware2019@gmail.com</p>
                     <div class="d-flex pt-2">
-                        <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-twitter"></i></a>
-                        <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-facebook-f"></i></a>
+
+                        <a class="btn btn-outline-light btn-social" href="https://www.facebook.com/tendel.banepa"><i class="fab fa-facebook-f"></i></a>
                         <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-instagram"></i></a>
-                        <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-linkedin-in"></i></a>
+                          <a class="btn btn-outline-light btn-social" href="">
+                            <i class="fab fa-tiktok fa-1x"></i>
+                            </a>
+
                     </div>
                 </div>
                 <div class="col-md-6 col-lg-3">
-                    <h4 class="text-white mb-4">About Us</h4>
+                    <h4 class="text-white ">About Us</h4>
                     <a class="btn btn-link" href="/about">Introduction</a>
-                    <a class="btn btn-link" href="/about">Mission, Vision and<span>Values</span> </a>
+                    <a class="btn btn-link" href="/about">Mission </a>
                     <a class="btn btn-link" href="/about">Board of Directors</a>
 
                 </div>
                 <div class="col-md-6 col-lg-3">
-                    <h4 class="text-white mb-4">Our branch</h4>
+                    <h4 class="text-white ">Our branch</h4>
                     <a class="btn btn-link" href="/branch">Banepa</a>
+                    <a class="btn btn-link" href="/branch">Panauti </a>
                     <a class="btn btn-link" href="/branch">PanchKhal</a>
-                    <a class="btn btn-link" href="/branch">Kathmandu</a>
+                    <a class="btn btn-link" href="/branch">Ramhiti</a>
 
                 </div>
                 <div class="col-md-6 col-lg-3">
-                    <h4 class="text-white mb-4">Important Link</h4>
+                    <h4 class="text-white ">Important Link</h4>
                     <a class="btn btn-link" href="/news">News and Notice</a>
                     <a class="btn btn-link" href="/gallery">Gallery</a>
                     <a class="btn btn-link" href="/contact">Contact Us</a>
@@ -457,6 +428,27 @@ function showMap(mapLink) {
 
 
 
+
+    $(document).ready(function() {
+   var activeNavItem = localStorage.getItem('activeNavItem');
+
+  // If there is an active state, set it on the nav-item
+  if (activeNavItem) {
+    $('.navbar-light .navbar-nav .nav-link').removeClass('active');
+    $('#' + activeNavItem).addClass('active');
+  }
+
+  // Add a click event listener to the nav-items
+  $('.navbar-light .navbar-nav .nav-link').click(function() {
+
+    $('navbar-light .navbar-nav .nav-link').removeClass('active');
+
+    $(this).addClass('active');
+
+
+    localStorage.setItem('activeNavItem', $(this).attr('id'));
+  });
+});
 
 
 </script>

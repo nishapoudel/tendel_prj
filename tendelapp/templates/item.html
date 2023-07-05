@@ -13,19 +13,19 @@
 
         </div>
         <div class="carousel-caption d-none d-md-block">
-          <h1 class="intro-section animated slideInDown" data-wow-delay="0.5s">Item</h1>
+          <h1 class="intro-section animated slideInDown" data-wow-delay="0.5s">Our Products</h1>
           <nav aria-label="breadcrumb">
             <ol class="breadcrumb justify-content-center">
                 <li class="breadcrumb-item"><a class="text-white" href="/">Home</a></li>
 
-                <li class="breadcrumb-item text-white active" aria-current="page">item</li>
+                <li class="breadcrumb-item text-white active" aria-current="page">products</li>
             </ol>
         </nav>
           </div>
 
-
       </div>
 </section>
+
 
 
 
@@ -36,11 +36,11 @@
 				<h5 class="mb-5  fw-medium branch-title">Our Items</h1>
 			</div>
 			<div class="row g-4">
-                {% for i in allitem %}
+                {% for i in page %}
 				<div class="col-lg-4 col-md-6 wow fadeInUp col-prod" data-wow-delay="0.1s">
 					<div class="feature-item bg-light rounded p-4">
 						<div class="image-container">
-							<img src=" {% static 'image/tendel-1.jpg' %}" alt="Image 1">
+							<img src="/media/{{i.image}}" alt="Image 1">
 
 						  </div>
                           <p>{{ i.title }}</p>
@@ -50,51 +50,8 @@
 					</div>
 				</div>
                 {% endfor %}
-				<div class="col-lg-4 col-md-6 wow fadeInUp col-prod" data-wow-delay="0.3s">
-					<div class="feature-item bg-light rounded p-4">
-						<div class="image-container">
-							<img src="{% static 'image/tendel-2.jpg' %}" alt="Image 1">
 
-						  </div>
 
-					</div>
-				</div>
-				<div class="col-lg-4 col-md-6 wow fadeInUp col-prod" data-wow-delay="0.5s">
-					<div class="feature-item bg-light rounded p-4">
-						<div class="image-container">
-							<img src="{% static 'image/tendel-3.jpg' %}" alt="Image 1">
-
-						  </div>
-
-					</div>
-				</div>
-				<div class="col-lg-4 col-md-6 wow fadeInUp col-prod" data-wow-delay="0.1s">
-					<div class="feature-item bg-light rounded p-4">
-						<div class="image-container">
-							<img src="{% static 'image/tendel-4.jpg' %}" alt="Image 1">
-
-						  </div>
-
-					</div>
-				</div>
-				<div class="col-lg-4 col-md-6 wow fadeInUp col-prod" data-wow-delay="0.3s">
-					<div class="feature-item bg-light rounded p-4">
-						<div class="image-container">
-							<img src="{% static 'image/tendel-5.jpg' %}" alt="Image 1">
-
-						  </div>
-
-					</div>
-				</div>
-				<div class="col-lg-4 col-md-6 wow fadeInUp col-prod" data-wow-delay="0.5s">
-					<div class="feature-item bg-light rounded p-4">
-						<div class="image-container">
-							<img src="{% static 'image/tendel-6.jpg' %}" alt="Image 1">
-
-						  </div>
-
-					</div>
-				</div>
 
 			</div>
 		</div>
@@ -104,33 +61,26 @@
 
 <!----pagination-->
 <nav aria-label="Page navigation example">
-    <ul class="pagination justify-content-center">
-        {% if page.has_previous %}
-      <li class="page-item ">
-        <a class="page-link" href="?page={{page.previous_page_number}}" >❮</a>
-      </li>
-      {% endif %}
+  <ul class="pagination justify-content-center">
+    {% if page.has_previous %}
+    <li class="page-item">
+      <a class="page-link" href="?page={{ page.previous_page_number }}">❮</a>
+    </li>
+    {% endif %}
 
-      {% for num_page in page.paginator.page_range %}
-      <br/>
-      {% if page.number == num_page %}
-      <li class="page-item active"><a class="page-link" href="?page={{num_page}}">{{num_page}}</a></li>
+    {% for num_page in page.paginator.page_range %}
+    <li class="page-item {% if page.number == num_page %}active{% endif %}">
+      <a class="page-link" href="?page={{ num_page }}">{{ num_page }}</a>
+    </li>
+    {% endfor %}
 
-
-      {% else %}
-      <li class="page-item "><a class="page-link" href="?page={{num_page}}">{{num_page}}</a></li>
-        {% endif %}
-        <br/>
-      {% endfor %}
-
-
-      {% if page.has_next %}
-      <li class="page-item">
-        <a class="page-link" href="?page={{page.next_page_number}}">❯</a>
-      </li>
-      {% endif %}
-    </ul>
-  </nav>
+    {% if page.has_next %}
+    <li class="page-item">
+      <a class="page-link" href="?page={{ page.next_page_number }}">❯</a>
+    </li>
+    {% endif %}
+  </ul>
+</nav>
 
 
 

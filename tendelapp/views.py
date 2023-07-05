@@ -15,6 +15,7 @@ def home(request):
     allnews = News.objects.all()[:3]
     allteam = Team.objects.all()[:3]
     allitem = Item.objects.all()[:6]
+    allabout=About.objects.all()[:1]
 
 
     modal = Modal.objects.latest('uploaded_time')  # Retrieve the first instance of Modal, assuming you want the first one
@@ -36,6 +37,7 @@ def home(request):
         "allnews":allnews,
         "allteam":allteam,
         "allitem":allitem,
+        "allabout":allabout,
 
        'modal': modal,
        'expiration_time': expiration_time,
@@ -85,8 +87,12 @@ def team(request):
 
 
 def about(request):
+    allabout=About.objects.all()[:1]
+    context = {
 
-    return render(request,'about.html')
+        "allabout":allabout,
+   }
+    return render(request,'about.html',context)
 
 def contact(request):
 

@@ -110,3 +110,17 @@ class Team(models.Model):
         return self.name
 
 
+class About(models.Model):
+    about_id =models.AutoField(primary_key=True)
+    body = models.CharField(max_length=800)
+    image = models.ImageField(upload_to='about/',default='default.jpg')
+
+
+
+
+    class Meta:
+        ordering=['-about_id']
+
+
+    def __str__(self):
+        return self.body

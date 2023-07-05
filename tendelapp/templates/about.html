@@ -34,18 +34,20 @@
 		<h1 class="text-center branch-title wow zoomIn" data-wow-delay="0.5s">About Us</h1>
 	 <div class="container-xxl " id="about">
             <div class="container py-5 ">
+                {% for about in allabout %}
                 <div class="row g-5 align-items-center about">
-                    <div class="col-lg-6 wow zoomIn" data-wow-delay="0.1s">
+                    <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s">
                         <h5 class="text-black fw-medium">Welcome to Tendel Hardware! </h5>
-						<p class="mb-4"> We are a leading supplier of building construction materials, tools, and equipment with multiple branches located in different areas. At Tendel Hardware, we are committed to providing our customers with high-quality products, exceptional customer service, and competitive prices.</p>
+						<p class="mb-4"> {{ about.body }}</p>
 
                         <p class="mb-4">At Tendel Hardware, we believe that exceptional customer service is the key to building long-lasting relationships with our customers. Our knowledgeable staff is always available to answer any questions you may have about our products or services. We can also provide expert advice on which products are best suited for your specific project, ensuring that you have the right tools and materials to get the job done. </p>
 
                     </div>
                     <div class="col-lg-6">
-                        <img class="img-about wow zoomIn" data-wow-delay="0.3s" src="{% static 'image/tendel-about.jpg' %}">
+                        <img class="img-about wow fadeInUp" data-wow-delay="0.5s" src="/media/{{about.image}}">
                     </div>
                 </div>
+				{% endfor %}
             </div>
         </div>
 
